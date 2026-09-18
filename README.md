@@ -235,5 +235,3 @@ Confidence-Aware RAG System/
 
 ## ⚖️ License
 This project is licensed under the MIT License.
-#   C o n f i d e n c e - A w a r e - R A G  
- 
