@@ -1,0 +1,74 @@
+[
+  {
+    "id": "q1",
+    "doc_ref": "delhi_high_court_order_2024",
+    "question": "What is the cost or penalty amount imposed by the High Court?",
+    "ground_truth_answer": "The High Court dismissed the writ petition with costs of Rs. 25,000/- to be deposited with the Delhi State Legal Services Authority within 30 days.",
+    "key_facts": ["25,000", "Rs. 25,000", "Delhi State Legal Services Authority", "30 days"],
+    "vulnerable_tokens": ["25,000", "30 days"],
+    "critical_type": "monetary_penalty"
+  },
+  {
+    "id": "q2",
+    "doc_ref": "delhi_high_court_order_2024",
+    "question": "Under what section and what is the timeline for filing a statutory appeal?",
+    "ground_truth_answer": "The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.",
+    "key_facts": ["Section 420", "45 days", "Municipal Act"],
+    "vulnerable_tokens": ["Section 420", "45 days"],
+    "critical_type": "legal_statute"
+  },
+  {
+    "id": "q3",
+    "doc_ref": "delhi_high_court_order_2024",
+    "question": "What was the date of the High Court order and who was the presiding judge?",
+    "ground_truth_answer": "The order was passed on 14.08.2024 by Hon'ble Mr. Justice Rajesh Chaturvedi.",
+    "key_facts": ["14.08.2024", "Justice Rajesh Chaturvedi", "Rajesh Chaturvedi"],
+    "vulnerable_tokens": ["14.08.2024", "Rajesh Chaturvedi"],
+    "critical_type": "date_and_judge"
+  },
+  {
+    "id": "q4",
+    "doc_ref": "delhi_high_court_order_2024",
+    "question": "What was the final decision of the High Court regarding the writ petition?",
+    "ground_truth_answer": "The writ petition was dismissed as the Court found no merit in the challenge against the demolition notice.",
+    "key_facts": ["dismissed", "no merit", "demolition notice"],
+    "vulnerable_tokens": ["dismissed"],
+    "critical_type": "court_decision"
+  },
+  {
+    "id": "q5",
+    "doc_ref": "rti_cic_decision_2025",
+    "question": "What penalty was imposed on the CPIO and under which section of the RTI Act?",
+    "ground_truth_answer": "A penalty of Rs. 15,000/- was imposed on the CPIO under Section 20(1) of the RTI Act for malafide delay exceeding 60 days.",
+    "key_facts": ["Rs. 15,000", "15,000", "Section 20(1)", "60 days"],
+    "vulnerable_tokens": ["15,000", "Section 20(1)"],
+    "critical_type": "monetary_penalty"
+  },
+  {
+    "id": "q6",
+    "doc_ref": "rti_cic_decision_2025",
+    "question": "What is the compliance timeline given to the CPIO to provide the requested agreement?",
+    "ground_truth_answer": "The Commission directed the CPIO to provide the complete agreement within 15 working days.",
+    "key_facts": ["15 working days", "15 days", "NH-48"],
+    "vulnerable_tokens": ["15 working days"],
+    "critical_type": "compliance_timeline"
+  },
+  {
+    "id": "q7",
+    "doc_ref": "rti_cic_decision_2025",
+    "question": "Who was the appellant and which public authority was involved in the RTI appeal?",
+    "ground_truth_answer": "The appellant was Shri Arvind Mehta and the public authority was Ministry of Road Transport & Highways.",
+    "key_facts": ["Shri Arvind Mehta", "Arvind Mehta", "Ministry of Road Transport & Highways"],
+    "vulnerable_tokens": ["Arvind Mehta"],
+    "critical_type": "entity_identification"
+  },
+  {
+    "id": "q8",
+    "doc_ref": "rti_cic_decision_2025",
+    "question": "What is the decision file number of the Central Information Commission order?",
+    "ground_truth_answer": "The decision file number is CIC/MORTH/A/2025/001429.",
+    "key_facts": ["CIC/MORTH/A/2025/001429", "2025"],
+    "vulnerable_tokens": ["CIC/MORTH/A/2025/001429"],
+    "critical_type": "file_identifier"
+  }
+]

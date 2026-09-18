@@ -1,0 +1,16 @@
+{
+  "04ee7b3f-d629-4b7c-8773-112564cd9ee1": {
+    "document_id": "04ee7b3f-d629-4b7c-8773-112564cd9ee1",
+    "filename": "rti_reply_2025.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.99,
+    "min_confidence": 0.99,
+    "file_size_bytes": 1050,
+    "created_at": "2026-09-18T04:53:33.151959+00:00",
+    "metadata": {
+      "engine": "DigitalPDFEngine",
+      "saved_file": "data\\test_tmp\\uploads\\04ee7b3f-d629-4b7c-8773-112564cd9ee1_rti_reply_2025.pdf"
+    }
+  }
+}

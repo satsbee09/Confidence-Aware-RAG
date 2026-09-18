@@ -1,0 +1,18 @@
+{
+  "include": [
+    ".",
+    "backend",
+    "evaluation"
+  ],
+  "extraPaths": [
+    "backend"
+  ],
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": [
+        "backend"
+      ]
+    }
+  ]
+}

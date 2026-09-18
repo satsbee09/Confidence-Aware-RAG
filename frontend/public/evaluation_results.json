@@ -1,0 +1,764 @@
+{
+  "benchmark_timestamp": "2026-09-18 10:38:13",
+  "system_configuration": {
+    "embedding_model": "all-MiniLM-L6-v2",
+    "similarity_weight": 0.5,
+    "confidence_weight": 0.5,
+    "low_confidence_threshold": 0.5,
+    "llm_provider": "groq"
+  },
+  "tiers": {
+    "clean": {
+      "noise_tier": "clean",
+      "total_queries": 8,
+      "baseline": {
+        "mean_accuracy": 0.9583,
+        "warning_detection_rate": 0.0,
+        "mean_evidence_confidence": 0.9717,
+        "mean_latency_ms": 64.29,
+        "unchecked_hallucination_rate": 0.0
+      },
+      "proposed": {
+        "mean_accuracy": 0.9583,
+        "warning_detection_rate": 0.875,
+        "mean_evidence_confidence": 0.9717,
+        "mean_latency_ms": 61.87,
+        "unchecked_hallucination_rate": 0.0
+      },
+      "details": [
+        {
+          "question_id": "q1",
+          "question": "What is the cost or penalty amount imposed by the High Court?",
+          "critical_type": "monetary_penalty",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: IN THE HIGH COURT OF DELHI AT NEW DELHI W.P.(C) NO. 4812/2024 & CM APPL. 19842/2024 IN THE MATTER OF: Surender Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BLE MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the demolition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel for both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with costs of Rs. 25,000/- to be deposited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9686,
+            "latency_ms": 58.77
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 87.8%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nIN THE HIGH COURT OF DELHI AT NEW DELHI W.P.(C) NO. 4812/2024 & CM APPL. 19842/2024 IN THE MATTER OF: Surender Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BLE MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the demolition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel for both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with costs of Rs. 25,000/- to be deposited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: 'W.P.(C)' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9686,
+            "latency_ms": 63.07
+          }
+        },
+        {
+          "question_id": "q2",
+          "question": "Under what section and what is the timeline for filing a statutory appeal?",
+          "critical_type": "legal_statute",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: IN THE HIGH COURT OF DELHI AT NEW DELHI W.P.(C) NO. 4812/2024 & CM APPL. 19842/2024 IN THE MATTER OF: Surender Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BLE MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the demolition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel for both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with costs of Rs. 25,000/- to be deposited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9762,
+            "latency_ms": 66.69
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 87.8%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nIN THE HIGH COURT OF DELHI AT NEW DELHI W.P.(C) NO. 4812/2024 & CM APPL. 19842/2024 IN THE MATTER OF: Surender Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BLE MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the demolition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel for both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with costs of Rs. 25,000/- to be deposited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: '25,000/-' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9762,
+            "latency_ms": 62.88
+          }
+        },
+        {
+          "question_id": "q3",
+          "question": "What was the date of the High Court order and who was the presiding judge?",
+          "critical_type": "date_and_judge",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: IN THE HIGH COURT OF DELHI AT NEW DELHI W.P.(C) NO. 4812/2024 & CM APPL. 19842/2024 IN THE MATTER OF: Surender Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BLE MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the demolition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel for both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with costs of Rs. 25,000/- to be deposited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9686,
+            "latency_ms": 65.53
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 87.8%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nIN THE HIGH COURT OF DELHI AT NEW DELHI W.P.(C) NO. 4812/2024 & CM APPL. 19842/2024 IN THE MATTER OF: Surender Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BLE MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the demolition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel for both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with costs of Rs. 25,000/- to be deposited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: 'W.P.(C)' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9686,
+            "latency_ms": 63.97
+          }
+        },
+        {
+          "question_id": "q4",
+          "question": "What was the final decision of the High Court regarding the writ petition?",
+          "critical_type": "court_decision",
+          "baseline": {
+            "answer": "According to the official document [Page 1]: IN THE HIGH COURT OF DELHI AT NEW DELHI W.P.(C) NO. 4812/2024 & CM APPL. 19842/2024 IN THE MATTER OF: Surender Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BLE MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the demolition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel for both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with costs of Rs. 25,000/- to be deposited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.99,
+            "latency_ms": 65.0
+          },
+          "proposed": {
+            "answer": "According to the official document [Page 1]: 87.8%, Status: \u2713 CLEAR):\nIN THE HIGH COURT OF DELHI AT NEW DELHI W.P.(C) NO. 4812/2024 & CM APPL. 19842/2024 IN THE MATTER OF: Surender Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BLE MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the demolition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel for both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with costs of Rs. 25,000/- to be deposited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: None",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "warning_text": null,
+            "risk_level": "LOW_RISK",
+            "evidence_mean_conf": 0.99,
+            "latency_ms": 71.49
+          }
+        },
+        {
+          "question_id": "q5",
+          "question": "What penalty was imposed on the CPIO and under which section of the RTI Act?",
+          "critical_type": "monetary_penalty",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: CENTRAL INFORMATION COMMISSION Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISION FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll collection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) without substantiating commercial confidence. 3. Commission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is issued to CPIO under Section 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9536,
+            "latency_ms": 85.58
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 85.3%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nCENTRAL INFORMATION COMMISSION Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISION FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll collection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) without substantiating commercial confidence. 3. Commission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is issued to CPIO under Section 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days.\nUncertain Tokens Requiring Caution: '8(1)(d)' (52%), '20(1)' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9536,
+            "latency_ms": 65.94
+          }
+        },
+        {
+          "question_id": "q6",
+          "question": "What is the compliance timeline given to the CPIO to provide the requested agreement?",
+          "critical_type": "compliance_timeline",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: CENTRAL INFORMATION COMMISSION Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISION FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll collection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) without substantiating commercial confidence. 3. Commission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is issued to CPIO under Section 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9732,
+            "latency_ms": 57.21
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 85.3%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nCENTRAL INFORMATION COMMISSION Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISION FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll collection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) without substantiating commercial confidence. 3. Commission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is issued to CPIO under Section 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days.\nUncertain Tokens Requiring Caution: '20(1)' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9732,
+            "latency_ms": 57.22
+          }
+        },
+        {
+          "question_id": "q7",
+          "question": "Who was the appellant and which public authority was involved in the RTI appeal?",
+          "critical_type": "entity_identification",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: CENTRAL INFORMATION COMMISSION Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISION FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll collection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) without substantiating commercial confidence. 3. Commission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is issued to CPIO under Section 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9704,
+            "latency_ms": 59.78
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 85.3%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nCENTRAL INFORMATION COMMISSION Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISION FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll collection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) without substantiating commercial confidence. 3. Commission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is issued to CPIO under Section 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days.\nUncertain Tokens Requiring Caution: '8(1)(d)' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9704,
+            "latency_ms": 56.05
+          }
+        },
+        {
+          "question_id": "q8",
+          "question": "What is the decision file number of the Central Information Commission order?",
+          "critical_type": "file_identifier",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: CENTRAL INFORMATION COMMISSION Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISION FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll collection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) without substantiating commercial confidence. 3. Commission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is issued to CPIO under Section 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9732,
+            "latency_ms": 55.75
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 85.3%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nCENTRAL INFORMATION COMMISSION Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISION FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll collection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) without substantiating commercial confidence. 3. Commission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is issued to CPIO under Section 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days.\nUncertain Tokens Requiring Caution: '-' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9732,
+            "latency_ms": 54.36
+          }
+        }
+      ]
+    },
+    "low": {
+      "noise_tier": "low",
+      "total_queries": 8,
+      "baseline": {
+        "mean_accuracy": 0.8438,
+        "warning_detection_rate": 0.0,
+        "mean_evidence_confidence": 0.9386,
+        "mean_latency_ms": 66.69,
+        "unchecked_hallucination_rate": 0.0
+      },
+      "proposed": {
+        "mean_accuracy": 0.8438,
+        "warning_detection_rate": 1.0,
+        "mean_evidence_confidence": 0.9386,
+        "mean_latency_ms": 68.62,
+        "unchecked_hallucination_rate": 0.0
+      },
+      "details": [
+        {
+          "question_id": "q1",
+          "question": "What is the cost or penalty amount imposed by the High Court?",
+          "critical_type": "monetary_penalty",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: IN TH3 HIGH COURT OF DELHI AT NEW D3LHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN THE MATTER OF: Surencler Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BL3 MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the dem0lition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Kha5ra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel f0r both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with co5ts 0f Rs. 25,000/- to be depo5ited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9624,
+            "latency_ms": 62.44
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 85.5%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nIN TH3 HIGH COURT OF DELHI AT NEW D3LHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN THE MATTER OF: Surencler Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BL3 MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the dem0lition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Kha5ra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel f0r both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with co5ts 0f Rs. 25,000/- to be depo5ited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: '25,000/-' (52%), 'depo5ited' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9624,
+            "latency_ms": 66.85
+          }
+        },
+        {
+          "question_id": "q2",
+          "question": "Under what section and what is the timeline for filing a statutory appeal?",
+          "critical_type": "legal_statute",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: IN TH3 HIGH COURT OF DELHI AT NEW D3LHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN THE MATTER OF: Surencler Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BL3 MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the dem0lition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Kha5ra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel f0r both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with co5ts 0f Rs. 25,000/- to be depo5ited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9624,
+            "latency_ms": 65.5
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 85.5%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nIN TH3 HIGH COURT OF DELHI AT NEW D3LHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN THE MATTER OF: Surencler Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BL3 MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the dem0lition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Kha5ra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel f0r both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with co5ts 0f Rs. 25,000/- to be depo5ited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: '25,000/-' (52%), 'depo5ited' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9624,
+            "latency_ms": 63.02
+          }
+        },
+        {
+          "question_id": "q3",
+          "question": "What was the date of the High Court order and who was the presiding judge?",
+          "critical_type": "date_and_judge",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: IN TH3 HIGH COURT OF DELHI AT NEW D3LHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN THE MATTER OF: Surencler Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BL3 MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the dem0lition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Kha5ra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel f0r both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with co5ts 0f Rs. 25,000/- to be depo5ited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9473,
+            "latency_ms": 69.44
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 85.5%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nIN TH3 HIGH COURT OF DELHI AT NEW D3LHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN THE MATTER OF: Surencler Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BL3 MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the dem0lition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Kha5ra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel f0r both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with co5ts 0f Rs. 25,000/- to be depo5ited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: 'D3LHI' (52%), 'W.P.(C)' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9473,
+            "latency_ms": 72.48
+          }
+        },
+        {
+          "question_id": "q4",
+          "question": "What was the final decision of the High Court regarding the writ petition?",
+          "critical_type": "court_decision",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: IN TH3 HIGH COURT OF DELHI AT NEW D3LHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN THE MATTER OF: Surencler Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BL3 MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the dem0lition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Kha5ra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel f0r both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with co5ts 0f Rs. 25,000/- to be depo5ited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9575,
+            "latency_ms": 70.77
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 85.5%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nIN TH3 HIGH COURT OF DELHI AT NEW D3LHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN THE MATTER OF: Surencler Sharma & Ors. ...Petitioners Versus Union of India & Anr. ...Respondents CORAM: HON'BL3 MR. JUSTICE RAJESH CHATURVEDI ORDER DATED: 14.08.2024 1. The present writ petition has been filed under Article 226 challenging the dem0lition notice. 2. The petitioner claims title through registered Sale Deed dated 12.03.1998 for property bearing Plot No. 44, Kha5ra No. 312, Village Rangpuri, New Delhi. 3. Having heard learned counsel f0r both sides, this Court finds no merit in the petition. 4. The writ petition is accordingly DISMISSED with co5ts 0f Rs. 25,000/- to be depo5ited by the petitioner with the Delhi State Legal Services Authority within 30 days. 5. The statutory appeal period is limited to 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: 'dem0lition' (52%), 'f0r' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9575,
+            "latency_ms": 73.98
+          }
+        },
+        {
+          "question_id": "q5",
+          "question": "What penalty was imposed on the CPIO and under which section of the RTI Act?",
+          "critical_type": "monetary_penalty",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: CENTR4L INFORMATION COMMI5SI0N Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISI0N FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highway5 Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll col1ection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) with0ut substantiating commercial confidence. 3. Comrnission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is i5suecl to CPIO under 5ection 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.75,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9051,
+            "latency_ms": 66.24
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 81.0%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nCENTR4L INFORMATION COMMI5SI0N Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISI0N FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highway5 Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll col1ection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) with0ut substantiating commercial confidence. 3. Comrnission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is i5suecl to CPIO under 5ection 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days.\nUncertain Tokens Requiring Caution: '8(1)(d)' (52%), 'with0ut' (52%), 'i5suecl' (52%), '20(1)' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.75,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9051,
+            "latency_ms": 71.53
+          }
+        },
+        {
+          "question_id": "q6",
+          "question": "What is the compliance timeline given to the CPIO to provide the requested agreement?",
+          "critical_type": "compliance_timeline",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: CENTR4L INFORMATION COMMI5SI0N Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISI0N FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highway5 Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll col1ection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) with0ut substantiating commercial confidence. 3. Comrnission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is i5suecl to CPIO under 5ection 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9508,
+            "latency_ms": 61.88
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 81.0%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nCENTR4L INFORMATION COMMI5SI0N Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISI0N FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highway5 Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll col1ection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) with0ut substantiating commercial confidence. 3. Comrnission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is i5suecl to CPIO under 5ection 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days.\nUncertain Tokens Requiring Caution: '8(1)(d)' (52%), 'with0ut' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9508,
+            "latency_ms": 66.51
+          }
+        },
+        {
+          "question_id": "q7",
+          "question": "Who was the appellant and which public authority was involved in the RTI appeal?",
+          "critical_type": "entity_identification",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: CENTR4L INFORMATION COMMI5SI0N Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISI0N FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highway5 Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll col1ection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) with0ut substantiating commercial confidence. 3. Comrnission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is i5suecl to CPIO under 5ection 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9508,
+            "latency_ms": 67.86
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 81.0%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nCENTR4L INFORMATION COMMI5SI0N Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISI0N FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highway5 Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll col1ection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) with0ut substantiating commercial confidence. 3. Comrnission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is i5suecl to CPIO under 5ection 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days.\nUncertain Tokens Requiring Caution: '8(1)(d)' (52%), 'with0ut' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9508,
+            "latency_ms": 66.13
+          }
+        },
+        {
+          "question_id": "q8",
+          "question": "What is the decision file number of the Central Information Commission order?",
+          "critical_type": "file_identifier",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: CENTR4L INFORMATION COMMI5SI0N Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISI0N FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highway5 Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll col1ection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) with0ut substantiating commercial confidence. 3. Comrnission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is i5suecl to CPIO under 5ection 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8725,
+            "latency_ms": 69.42
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 81.0%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nCENTR4L INFORMATION COMMI5SI0N Baba Gangnath Marg, Munirka, New Delhi - 110067 DECISI0N FILE NO: CIC/MORTH/A/2025/001429 Appellant: Shri Arvind Mehta Public Authority: Ministry of Road Transport & Highway5 Date of Hearing: 22.01.2025 Date of Decision: 28.01.2025 FACTS OF THE CASE: 1. The Appellant sought details of toll col1ection concessionaire agreement for NH-48. 2. The CPIO wrongfully denied information under Section 8(1)(d) with0ut substantiating commercial confidence. 3. Comrnission directs CPIO to provide complete agreement within 15 working days. 4. A show-cause notice is i5suecl to CPIO under 5ection 20(1) imposing penalty of Rs. 15,000/- for malafide delay exceeding 60 days.\nUncertain Tokens Requiring Caution: 'CIC/MORTH/A/2025/001429' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8725,
+            "latency_ms": 68.43
+          }
+        }
+      ]
+    },
+    "medium": {
+      "noise_tier": "medium",
+      "total_queries": 8,
+      "baseline": {
+        "mean_accuracy": 0.5208,
+        "warning_detection_rate": 0.0,
+        "mean_evidence_confidence": 0.891,
+        "mean_latency_ms": 81.52,
+        "unchecked_hallucination_rate": 1.0
+      },
+      "proposed": {
+        "mean_accuracy": 0.5208,
+        "warning_detection_rate": 1.0,
+        "mean_evidence_confidence": 0.891,
+        "mean_latency_ms": 84.49,
+        "unchecked_hallucination_rate": 0.0
+      },
+      "details": [
+        {
+          "question_id": "q1",
+          "question": "What is the cost or penalty amount imposed by the High Court?",
+          "critical_type": "monetary_penalty",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: ^N THE HIGH COURT OF DELHI 4T NEW DELHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN TH3 MATT3R OF: Surender Sharma & 0rs. ...Petitioner5 Versus Union of 1ndia & Anr. ...Respondent5 CORAM: H0N'BLE MR. JU5T1C3 RAJESH CHATURVEDI O^DER DATED: 14.08.2024 1. The presen^ writ petition has been filed under Article 226 challenging the demol'tion notice. 2. The petitioner clairns ti||e through registered Sale Deecl datecl 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Vi11age Rangpuri, New Delhi. 3. Having hearcl learned c0un5el for both 5ide5, this Court finds no m'rit in the petition. 4. The writ petition is accordingly DISM1SSED with costs o~ Rs. 25,00^/- to be depo'ited by the petitioner with the Delhi State Legal Services Au~hority ^ithin 30 day5. 5. The st^tutory appea1 period is limited t^ 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8877,
+            "latency_ms": 75.41
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 80.1%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\n^N THE HIGH COURT OF DELHI 4T NEW DELHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN TH3 MATT3R OF: Surender Sharma & 0rs. ...Petitioner5 Versus Union of 1ndia & Anr. ...Respondent5 CORAM: H0N'BLE MR. JU5T1C3 RAJESH CHATURVEDI O^DER DATED: 14.08.2024 1. The presen^ writ petition has been filed under Article 226 challenging the demol'tion notice. 2. The petitioner clairns ti||e through registered Sale Deecl datecl 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Vi11age Rangpuri, New Delhi. 3. Having hearcl learned c0un5el for both 5ide5, this Court finds no m'rit in the petition. 4. The writ petition is accordingly DISM1SSED with costs o~ Rs. 25,00^/- to be depo'ited by the petitioner with the Delhi State Legal Services Au~hority ^ithin 30 day5. 5. The st^tutory appea1 period is limited t^ 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: 'DISM1SSED' (52%), 'o~' (52%), '25,00^/-' (52%), 'Au~hority' (52%), '^ithin' (52%), 'day5.' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8877,
+            "latency_ms": 78.91
+          }
+        },
+        {
+          "question_id": "q2",
+          "question": "Under what section and what is the timeline for filing a statutory appeal?",
+          "critical_type": "legal_statute",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: ^N THE HIGH COURT OF DELHI 4T NEW DELHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN TH3 MATT3R OF: Surender Sharma & 0rs. ...Petitioner5 Versus Union of 1ndia & Anr. ...Respondent5 CORAM: H0N'BLE MR. JU5T1C3 RAJESH CHATURVEDI O^DER DATED: 14.08.2024 1. The presen^ writ petition has been filed under Article 226 challenging the demol'tion notice. 2. The petitioner clairns ti||e through registered Sale Deecl datecl 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Vi11age Rangpuri, New Delhi. 3. Having hearcl learned c0un5el for both 5ide5, this Court finds no m'rit in the petition. 4. The writ petition is accordingly DISM1SSED with costs o~ Rs. 25,00^/- to be depo'ited by the petitioner with the Delhi State Legal Services Au~hority ^ithin 30 day5. 5. The st^tutory appea1 period is limited t^ 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8877,
+            "latency_ms": 77.25
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 80.1%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\n^N THE HIGH COURT OF DELHI 4T NEW DELHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN TH3 MATT3R OF: Surender Sharma & 0rs. ...Petitioner5 Versus Union of 1ndia & Anr. ...Respondent5 CORAM: H0N'BLE MR. JU5T1C3 RAJESH CHATURVEDI O^DER DATED: 14.08.2024 1. The presen^ writ petition has been filed under Article 226 challenging the demol'tion notice. 2. The petitioner clairns ti||e through registered Sale Deecl datecl 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Vi11age Rangpuri, New Delhi. 3. Having hearcl learned c0un5el for both 5ide5, this Court finds no m'rit in the petition. 4. The writ petition is accordingly DISM1SSED with costs o~ Rs. 25,00^/- to be depo'ited by the petitioner with the Delhi State Legal Services Au~hority ^ithin 30 day5. 5. The st^tutory appea1 period is limited t^ 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: 'DISM1SSED' (52%), 'o~' (52%), '25,00^/-' (52%), 'Au~hority' (52%), '^ithin' (52%), 'day5.' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8877,
+            "latency_ms": 109.46
+          }
+        },
+        {
+          "question_id": "q3",
+          "question": "What was the date of the High Court order and who was the presiding judge?",
+          "critical_type": "date_and_judge",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: ^N THE HIGH COURT OF DELHI 4T NEW DELHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN TH3 MATT3R OF: Surender Sharma & 0rs. ...Petitioner5 Versus Union of 1ndia & Anr. ...Respondent5 CORAM: H0N'BLE MR. JU5T1C3 RAJESH CHATURVEDI O^DER DATED: 14.08.2024 1. The presen^ writ petition has been filed under Article 226 challenging the demol'tion notice. 2. The petitioner clairns ti||e through registered Sale Deecl datecl 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Vi11age Rangpuri, New Delhi. 3. Having hearcl learned c0un5el for both 5ide5, this Court finds no m'rit in the petition. 4. The writ petition is accordingly DISM1SSED with costs o~ Rs. 25,00^/- to be depo'ited by the petitioner with the Delhi State Legal Services Au~hority ^ithin 30 day5. 5. The st^tutory appea1 period is limited t^ 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9316,
+            "latency_ms": 92.7
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 80.1%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\n^N THE HIGH COURT OF DELHI 4T NEW DELHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN TH3 MATT3R OF: Surender Sharma & 0rs. ...Petitioner5 Versus Union of 1ndia & Anr. ...Respondent5 CORAM: H0N'BLE MR. JU5T1C3 RAJESH CHATURVEDI O^DER DATED: 14.08.2024 1. The presen^ writ petition has been filed under Article 226 challenging the demol'tion notice. 2. The petitioner clairns ti||e through registered Sale Deecl datecl 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Vi11age Rangpuri, New Delhi. 3. Having hearcl learned c0un5el for both 5ide5, this Court finds no m'rit in the petition. 4. The writ petition is accordingly DISM1SSED with costs o~ Rs. 25,00^/- to be depo'ited by the petitioner with the Delhi State Legal Services Au~hority ^ithin 30 day5. 5. The st^tutory appea1 period is limited t^ 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: '^N' (52%), 'W.P.(C)' (52%), 'ti||e' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9316,
+            "latency_ms": 84.57
+          }
+        },
+        {
+          "question_id": "q4",
+          "question": "What was the final decision of the High Court regarding the writ petition?",
+          "critical_type": "court_decision",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: ^N THE HIGH COURT OF DELHI 4T NEW DELHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN TH3 MATT3R OF: Surender Sharma & 0rs. ...Petitioner5 Versus Union of 1ndia & Anr. ...Respondent5 CORAM: H0N'BLE MR. JU5T1C3 RAJESH CHATURVEDI O^DER DATED: 14.08.2024 1. The presen^ writ petition has been filed under Article 226 challenging the demol'tion notice. 2. The petitioner clairns ti||e through registered Sale Deecl datecl 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Vi11age Rangpuri, New Delhi. 3. Having hearcl learned c0un5el for both 5ide5, this Court finds no m'rit in the petition. 4. The writ petition is accordingly DISM1SSED with costs o~ Rs. 25,00^/- to be depo'ited by the petitioner with the Delhi State Legal Services Au~hority ^ithin 30 day5. 5. The st^tutory appea1 period is limited t^ 45 days under Section 420 of the Municipal Act. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.9262,
+            "latency_ms": 82.93
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 80.1%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\n^N THE HIGH COURT OF DELHI 4T NEW DELHI W.P.(C) NO. 4812/2024 & CM 4PPL. 19842/2024 IN TH3 MATT3R OF: Surender Sharma & 0rs. ...Petitioner5 Versus Union of 1ndia & Anr. ...Respondent5 CORAM: H0N'BLE MR. JU5T1C3 RAJESH CHATURVEDI O^DER DATED: 14.08.2024 1. The presen^ writ petition has been filed under Article 226 challenging the demol'tion notice. 2. The petitioner clairns ti||e through registered Sale Deecl datecl 12.03.1998 for property bearing Plot No. 44, Khasra No. 312, Vi11age Rangpuri, New Delhi. 3. Having hearcl learned c0un5el for both 5ide5, this Court finds no m'rit in the petition. 4. The writ petition is accordingly DISM1SSED with costs o~ Rs. 25,00^/- to be depo'ited by the petitioner with the Delhi State Legal Services Au~hority ^ithin 30 day5. 5. The st^tutory appea1 period is limited t^ 45 days under Section 420 of the Municipal Act.\nUncertain Tokens Requiring Caution: 'presen^' (52%), 'DISM1SSED' (52%), 'o~' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.9262,
+            "latency_ms": 84.16
+          }
+        },
+        {
+          "question_id": "q5",
+          "question": "What penalty was imposed on the CPIO and under which section of the RTI Act?",
+          "critical_type": "monetary_penalty",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: C3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CISION FIL3 NO: CIC/M0RTH/A/2025/001429 Appellant: S|r~ Arvincl Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.20^5 Date of Deci5ion: 28.01.2025 F4CTS OF THE CASE: 1. The Appellant s^ught detail5 of t0ll col1ection concessi0naire ag|eement f0r NH-48. 2. The CPIO wrongfully denied info'mation under Section 8(1)(d) with0ut s|b5tantiating cornmercial confidence. 3. Commission ^irects CPIO to provide c0mplete agreern|nt within 15 working days. 4. A show-ca's^ notice is i55ued to CP1O under Section 20(1) imposing penalty of Rs. 15,000/- for malafide de1ay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8641,
+            "latency_ms": 79.66
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 71.3%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nC3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CISION FIL3 NO: CIC/M0RTH/A/2025/001429 Appellant: S|r~ Arvincl Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.20^5 Date of Deci5ion: 28.01.2025 F4CTS OF THE CASE: 1. The Appellant s^ught detail5 of t0ll col1ection concessi0naire ag|eement f0r NH-48. 2. The CPIO wrongfully denied info'mation under Section 8(1)(d) with0ut s|b5tantiating cornmercial confidence. 3. Commission ^irects CPIO to provide c0mplete agreern|nt within 15 working days. 4. A show-ca's^ notice is i55ued to CP1O under Section 20(1) imposing penalty of Rs. 15,000/- for malafide de1ay exceeding 60 days.\nUncertain Tokens Requiring Caution: '8(1)(d)' (52%), 'with0ut' (52%), 's|b5tantiating' (52%), 'show-ca's^' (52%), 'i55ued' (52%), 'CP1O' (52%), '20(1)' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8641,
+            "latency_ms": 78.67
+          }
+        },
+        {
+          "question_id": "q6",
+          "question": "What is the compliance timeline given to the CPIO to provide the requested agreement?",
+          "critical_type": "compliance_timeline",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: C3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CISION FIL3 NO: CIC/M0RTH/A/2025/001429 Appellant: S|r~ Arvincl Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.20^5 Date of Deci5ion: 28.01.2025 F4CTS OF THE CASE: 1. The Appellant s^ught detail5 of t0ll col1ection concessi0naire ag|eement f0r NH-48. 2. The CPIO wrongfully denied info'mation under Section 8(1)(d) with0ut s|b5tantiating cornmercial confidence. 3. Commission ^irects CPIO to provide c0mplete agreern|nt within 15 working days. 4. A show-ca's^ notice is i55ued to CP1O under Section 20(1) imposing penalty of Rs. 15,000/- for malafide de1ay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8672,
+            "latency_ms": 81.88
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 71.3%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nC3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CISION FIL3 NO: CIC/M0RTH/A/2025/001429 Appellant: S|r~ Arvincl Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.20^5 Date of Deci5ion: 28.01.2025 F4CTS OF THE CASE: 1. The Appellant s^ught detail5 of t0ll col1ection concessi0naire ag|eement f0r NH-48. 2. The CPIO wrongfully denied info'mation under Section 8(1)(d) with0ut s|b5tantiating cornmercial confidence. 3. Commission ^irects CPIO to provide c0mplete agreern|nt within 15 working days. 4. A show-ca's^ notice is i55ued to CP1O under Section 20(1) imposing penalty of Rs. 15,000/- for malafide de1ay exceeding 60 days.\nUncertain Tokens Requiring Caution: '8(1)(d)' (52%), 'with0ut' (52%), 's|b5tantiating' (52%), '^irects' (52%), 'c0mplete' (52%), 'agreern|nt' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.6666666666666666,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8672,
+            "latency_ms": 79.26
+          }
+        },
+        {
+          "question_id": "q7",
+          "question": "Who was the appellant and which public authority was involved in the RTI appeal?",
+          "critical_type": "entity_identification",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: C3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CISION FIL3 NO: CIC/M0RTH/A/2025/001429 Appellant: S|r~ Arvincl Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.20^5 Date of Deci5ion: 28.01.2025 F4CTS OF THE CASE: 1. The Appellant s^ught detail5 of t0ll col1ection concessi0naire ag|eement f0r NH-48. 2. The CPIO wrongfully denied info'mation under Section 8(1)(d) with0ut s|b5tantiating cornmercial confidence. 3. Commission ^irects CPIO to provide c0mplete agreern|nt within 15 working days. 4. A show-ca's^ notice is i55ued to CP1O under Section 20(1) imposing penalty of Rs. 15,000/- for malafide de1ay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.3333333333333333,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8843,
+            "latency_ms": 79.48
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 71.3%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nC3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CISION FIL3 NO: CIC/M0RTH/A/2025/001429 Appellant: S|r~ Arvincl Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.20^5 Date of Deci5ion: 28.01.2025 F4CTS OF THE CASE: 1. The Appellant s^ught detail5 of t0ll col1ection concessi0naire ag|eement f0r NH-48. 2. The CPIO wrongfully denied info'mation under Section 8(1)(d) with0ut s|b5tantiating cornmercial confidence. 3. Commission ^irects CPIO to provide c0mplete agreern|nt within 15 working days. 4. A show-ca's^ notice is i55ued to CP1O under Section 20(1) imposing penalty of Rs. 15,000/- for malafide de1ay exceeding 60 days.\nUncertain Tokens Requiring Caution: 'S|r~' (52%), '8(1)(d)' (52%), 'with0ut' (52%), 's|b5tantiating' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.3333333333333333,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8843,
+            "latency_ms": 80.7
+          }
+        },
+        {
+          "question_id": "q8",
+          "question": "What is the decision file number of the Central Information Commission order?",
+          "critical_type": "file_identifier",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: C3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CISION FIL3 NO: CIC/M0RTH/A/2025/001429 Appellant: S|r~ Arvincl Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.20^5 Date of Deci5ion: 28.01.2025 F4CTS OF THE CASE: 1. The Appellant s^ught detail5 of t0ll col1ection concessi0naire ag|eement f0r NH-48. 2. The CPIO wrongfully denied info'mation under Section 8(1)(d) with0ut s|b5tantiating cornmercial confidence. 3. Commission ^irects CPIO to provide c0mplete agreern|nt within 15 working days. 4. A show-ca's^ notice is i55ued to CP1O under Section 20(1) imposing penalty of Rs. 15,000/- for malafide de1ay exceeding 60 days. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.5,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8789,
+            "latency_ms": 82.85
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 71.3%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nC3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CISION FIL3 NO: CIC/M0RTH/A/2025/001429 Appellant: S|r~ Arvincl Mehta Public Authority: Ministry of Road Transport & Highways Date of Hearing: 22.01.20^5 Date of Deci5ion: 28.01.2025 F4CTS OF THE CASE: 1. The Appellant s^ught detail5 of t0ll col1ection concessi0naire ag|eement f0r NH-48. 2. The CPIO wrongfully denied info'mation under Section 8(1)(d) with0ut s|b5tantiating cornmercial confidence. 3. Commission ^irects CPIO to provide c0mplete agreern|nt within 15 working days. 4. A show-ca's^ notice is i55ued to CP1O under Section 20(1) imposing penalty of Rs. 15,000/- for malafide de1ay exceeding 60 days.\nUncertain Tokens Requiring Caution: 'F4CTS' (52%), '^irects' (52%), 'c0mplete' (52%), 'agreern|nt' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.5,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8789,
+            "latency_ms": 80.2
+          }
+        }
+      ]
+    },
+    "high": {
+      "noise_tier": "high",
+      "total_queries": 8,
+      "baseline": {
+        "mean_accuracy": 0.2708,
+        "warning_detection_rate": 0.0,
+        "mean_evidence_confidence": 0.83,
+        "mean_latency_ms": 88.79,
+        "unchecked_hallucination_rate": 1.0
+      },
+      "proposed": {
+        "mean_accuracy": 0.2708,
+        "warning_detection_rate": 1.0,
+        "mean_evidence_confidence": 0.83,
+        "mean_latency_ms": 88.64,
+        "unchecked_hallucination_rate": 0.0
+      },
+      "details": [
+        {
+          "question_id": "q1",
+          "question": "What is the cost or penalty amount imposed by the High Court?",
+          "critical_type": "monetary_penalty",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: ^N THE H1GH COURT OF DELH1 4T NEW |ELHI W.P.(C) NO. 481~/2^24 & CM APPL. 19842/2024 IN TH3 M4TTER OF: 5urender 5harma & Ors. ...Pe^itioner5 Ver5u5 ^'ion 0f 1ndia & Anr. ...Respo|dent5 CORAM: HON'8LE MR. JU5T1CE RAJESH C|A^URVE^1 0RDER DAT3D: 14.^8.2024 1. The pre5ent writ petition h's been filed under Article 226 challenging the clem'lition notice. 2. The petiti0ner cl^irn~ t|tle through registerecl Sa1e ^'ecl dated 12.03.1998 f^r prop|rty bearing Plot N0. 44, Kha5ra |0. 312, Vil1age Ra|gpuri, New Del~i. 3. H'vi^g heard learnecl c0unsel f0r both 5|de5, thi5 C0urt fincls no rnerit in the petition. 4. The writ petiti0n is accordin'ly DI5MISSED with costs 0f Rs. 25,0~0/- to be dep05itecl by the petiti0ner with the Delhi 5tate Legal Services Autho~ity with^n '0 days. 5. The stat^tory ap^eal pe^i0| i5 limited t^ 45 days unde' Secti0n 420 0f the Municipa1 4ct. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8723,
+            "latency_ms": 86.11
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 68.0%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\n^N THE H1GH COURT OF DELH1 4T NEW |ELHI W.P.(C) NO. 481~/2^24 & CM APPL. 19842/2024 IN TH3 M4TTER OF: 5urender 5harma & Ors. ...Pe^itioner5 Ver5u5 ^'ion 0f 1ndia & Anr. ...Respo|dent5 CORAM: HON'8LE MR. JU5T1CE RAJESH C|A^URVE^1 0RDER DAT3D: 14.^8.2024 1. The pre5ent writ petition h's been filed under Article 226 challenging the clem'lition notice. 2. The petiti0ner cl^irn~ t|tle through registerecl Sa1e ^'ecl dated 12.03.1998 f^r prop|rty bearing Plot N0. 44, Kha5ra |0. 312, Vil1age Ra|gpuri, New Del~i. 3. H'vi^g heard learnecl c0unsel f0r both 5|de5, thi5 C0urt fincls no rnerit in the petition. 4. The writ petiti0n is accordin'ly DI5MISSED with costs 0f Rs. 25,0~0/- to be dep05itecl by the petiti0ner with the Delhi 5tate Legal Services Autho~ity with^n '0 days. 5. The stat^tory ap^eal pe^i0| i5 limited t^ 45 days unde' Secti0n 420 0f the Municipa1 4ct.\nUncertain Tokens Requiring Caution: '^N' (52%), 'H1GH' (52%), '|ELHI' (52%), 'W.P.(C)' (52%), 'pre5ent' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8723,
+            "latency_ms": 90.17
+          }
+        },
+        {
+          "question_id": "q2",
+          "question": "Under what section and what is the timeline for filing a statutory appeal?",
+          "critical_type": "legal_statute",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: ^N THE H1GH COURT OF DELH1 4T NEW |ELHI W.P.(C) NO. 481~/2^24 & CM APPL. 19842/2024 IN TH3 M4TTER OF: 5urender 5harma & Ors. ...Pe^itioner5 Ver5u5 ^'ion 0f 1ndia & Anr. ...Respo|dent5 CORAM: HON'8LE MR. JU5T1CE RAJESH C|A^URVE^1 0RDER DAT3D: 14.^8.2024 1. The pre5ent writ petition h's been filed under Article 226 challenging the clem'lition notice. 2. The petiti0ner cl^irn~ t|tle through registerecl Sa1e ^'ecl dated 12.03.1998 f^r prop|rty bearing Plot N0. 44, Kha5ra |0. 312, Vil1age Ra|gpuri, New Del~i. 3. H'vi^g heard learnecl c0unsel f0r both 5|de5, thi5 C0urt fincls no rnerit in the petition. 4. The writ petiti0n is accordin'ly DI5MISSED with costs 0f Rs. 25,0~0/- to be dep05itecl by the petiti0ner with the Delhi 5tate Legal Services Autho~ity with^n '0 days. 5. The stat^tory ap^eal pe^i0| i5 limited t^ 45 days unde' Secti0n 420 0f the Municipa1 4ct. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.3333333333333333,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8723,
+            "latency_ms": 94.18
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 68.0%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\n^N THE H1GH COURT OF DELH1 4T NEW |ELHI W.P.(C) NO. 481~/2^24 & CM APPL. 19842/2024 IN TH3 M4TTER OF: 5urender 5harma & Ors. ...Pe^itioner5 Ver5u5 ^'ion 0f 1ndia & Anr. ...Respo|dent5 CORAM: HON'8LE MR. JU5T1CE RAJESH C|A^URVE^1 0RDER DAT3D: 14.^8.2024 1. The pre5ent writ petition h's been filed under Article 226 challenging the clem'lition notice. 2. The petiti0ner cl^irn~ t|tle through registerecl Sa1e ^'ecl dated 12.03.1998 f^r prop|rty bearing Plot N0. 44, Kha5ra |0. 312, Vil1age Ra|gpuri, New Del~i. 3. H'vi^g heard learnecl c0unsel f0r both 5|de5, thi5 C0urt fincls no rnerit in the petition. 4. The writ petiti0n is accordin'ly DI5MISSED with costs 0f Rs. 25,0~0/- to be dep05itecl by the petiti0ner with the Delhi 5tate Legal Services Autho~ity with^n '0 days. 5. The stat^tory ap^eal pe^i0| i5 limited t^ 45 days unde' Secti0n 420 0f the Municipa1 4ct.\nUncertain Tokens Requiring Caution: '^N' (52%), 'H1GH' (52%), '|ELHI' (52%), 'W.P.(C)' (52%), 'pre5ent' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.3333333333333333,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8723,
+            "latency_ms": 93.37
+          }
+        },
+        {
+          "question_id": "q3",
+          "question": "What was the date of the High Court order and who was the presiding judge?",
+          "critical_type": "date_and_judge",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: ^N THE H1GH COURT OF DELH1 4T NEW |ELHI W.P.(C) NO. 481~/2^24 & CM APPL. 19842/2024 IN TH3 M4TTER OF: 5urender 5harma & Ors. ...Pe^itioner5 Ver5u5 ^'ion 0f 1ndia & Anr. ...Respo|dent5 CORAM: HON'8LE MR. JU5T1CE RAJESH C|A^URVE^1 0RDER DAT3D: 14.^8.2024 1. The pre5ent writ petition h's been filed under Article 226 challenging the clem'lition notice. 2. The petiti0ner cl^irn~ t|tle through registerecl Sa1e ^'ecl dated 12.03.1998 f^r prop|rty bearing Plot N0. 44, Kha5ra |0. 312, Vil1age Ra|gpuri, New Del~i. 3. H'vi^g heard learnecl c0unsel f0r both 5|de5, thi5 C0urt fincls no rnerit in the petition. 4. The writ petiti0n is accordin'ly DI5MISSED with costs 0f Rs. 25,0~0/- to be dep05itecl by the petiti0ner with the Delhi 5tate Legal Services Autho~ity with^n '0 days. 5. The stat^tory ap^eal pe^i0| i5 limited t^ 45 days unde' Secti0n 420 0f the Municipa1 4ct. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8723,
+            "latency_ms": 99.94
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 68.0%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\n^N THE H1GH COURT OF DELH1 4T NEW |ELHI W.P.(C) NO. 481~/2^24 & CM APPL. 19842/2024 IN TH3 M4TTER OF: 5urender 5harma & Ors. ...Pe^itioner5 Ver5u5 ^'ion 0f 1ndia & Anr. ...Respo|dent5 CORAM: HON'8LE MR. JU5T1CE RAJESH C|A^URVE^1 0RDER DAT3D: 14.^8.2024 1. The pre5ent writ petition h's been filed under Article 226 challenging the clem'lition notice. 2. The petiti0ner cl^irn~ t|tle through registerecl Sa1e ^'ecl dated 12.03.1998 f^r prop|rty bearing Plot N0. 44, Kha5ra |0. 312, Vil1age Ra|gpuri, New Del~i. 3. H'vi^g heard learnecl c0unsel f0r both 5|de5, thi5 C0urt fincls no rnerit in the petition. 4. The writ petiti0n is accordin'ly DI5MISSED with costs 0f Rs. 25,0~0/- to be dep05itecl by the petiti0ner with the Delhi 5tate Legal Services Autho~ity with^n '0 days. 5. The stat^tory ap^eal pe^i0| i5 limited t^ 45 days unde' Secti0n 420 0f the Municipa1 4ct.\nUncertain Tokens Requiring Caution: '^N' (52%), 'H1GH' (52%), '|ELHI' (52%), 'W.P.(C)' (52%), 'pre5ent' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8723,
+            "latency_ms": 106.4
+          }
+        },
+        {
+          "question_id": "q4",
+          "question": "What was the final decision of the High Court regarding the writ petition?",
+          "critical_type": "court_decision",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: ^N THE H1GH COURT OF DELH1 4T NEW |ELHI W.P.(C) NO. 481~/2^24 & CM APPL. 19842/2024 IN TH3 M4TTER OF: 5urender 5harma & Ors. ...Pe^itioner5 Ver5u5 ^'ion 0f 1ndia & Anr. ...Respo|dent5 CORAM: HON'8LE MR. JU5T1CE RAJESH C|A^URVE^1 0RDER DAT3D: 14.^8.2024 1. The pre5ent writ petition h's been filed under Article 226 challenging the clem'lition notice. 2. The petiti0ner cl^irn~ t|tle through registerecl Sa1e ^'ecl dated 12.03.1998 f^r prop|rty bearing Plot N0. 44, Kha5ra |0. 312, Vil1age Ra|gpuri, New Del~i. 3. H'vi^g heard learnecl c0unsel f0r both 5|de5, thi5 C0urt fincls no rnerit in the petition. 4. The writ petiti0n is accordin'ly DI5MISSED with costs 0f Rs. 25,0~0/- to be dep05itecl by the petiti0ner with the Delhi 5tate Legal Services Autho~ity with^n '0 days. 5. The stat^tory ap^eal pe^i0| i5 limited t^ 45 days unde' Secti0n 420 0f the Municipa1 4ct. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8835,
+            "latency_ms": 103.22
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 68.0%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\n^N THE H1GH COURT OF DELH1 4T NEW |ELHI W.P.(C) NO. 481~/2^24 & CM APPL. 19842/2024 IN TH3 M4TTER OF: 5urender 5harma & Ors. ...Pe^itioner5 Ver5u5 ^'ion 0f 1ndia & Anr. ...Respo|dent5 CORAM: HON'8LE MR. JU5T1CE RAJESH C|A^URVE^1 0RDER DAT3D: 14.^8.2024 1. The pre5ent writ petition h's been filed under Article 226 challenging the clem'lition notice. 2. The petiti0ner cl^irn~ t|tle through registerecl Sa1e ^'ecl dated 12.03.1998 f^r prop|rty bearing Plot N0. 44, Kha5ra |0. 312, Vil1age Ra|gpuri, New Del~i. 3. H'vi^g heard learnecl c0unsel f0r both 5|de5, thi5 C0urt fincls no rnerit in the petition. 4. The writ petiti0n is accordin'ly DI5MISSED with costs 0f Rs. 25,0~0/- to be dep05itecl by the petiti0ner with the Delhi 5tate Legal Services Autho~ity with^n '0 days. 5. The stat^tory ap^eal pe^i0| i5 limited t^ 45 days unde' Secti0n 420 0f the Municipa1 4ct.\nUncertain Tokens Requiring Caution: 'pre5ent' (52%), 'H'vi^g' (52%), 'c0unsel' (52%), 'f0r' (52%), '5|de5,' (52%), 'C0urt' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8835,
+            "latency_ms": 95.19
+          }
+        },
+        {
+          "question_id": "q5",
+          "question": "What penalty was imposed on the CPIO and under which section of the RTI Act?",
+          "critical_type": "monetary_penalty",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: C3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CIS1ON FIL3 ^O: CIC/MORTH/A/2025/001429 Appellant: 5hr~ Arvincl Mehta Public 4uthority: ~ini5try of Road Tran'port & Highways Date 0f Hearing: 22.01.20^5 Date 0f Deci'i0n: 28.01.20^5 F4CTS 0F THE CA^E: 1. T'e App|l1ant s0ught detail5 of t0ll collecti0n c0nce5sionaire agreernent for NH-48. 2. The CPIO wrongfully denied inf0rma'ion under Section 8(1)(cl) without 5ub5t~nt|ating comrnercial confide'c^. 3. Cornmissi0n clirects CP1O t0 pr0vi^e comp1ete agreernent withi| 15 working day5. 4. A show-cause noti'e ^s issued t0 CPI0 unde' |ection 20(1) imp0sing pena1ty of Rs. 15,000/- for malafide delay exceecling 60 day5. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.5,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8035,
+            "latency_ms": 81.61
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 66.5%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nC3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CIS1ON FIL3 ^O: CIC/MORTH/A/2025/001429 Appellant: 5hr~ Arvincl Mehta Public 4uthority: ~ini5try of Road Tran'port & Highways Date 0f Hearing: 22.01.20^5 Date 0f Deci'i0n: 28.01.20^5 F4CTS 0F THE CA^E: 1. T'e App|l1ant s0ught detail5 of t0ll collecti0n c0nce5sionaire agreernent for NH-48. 2. The CPIO wrongfully denied inf0rma'ion under Section 8(1)(cl) without 5ub5t~nt|ating comrnercial confide'c^. 3. Cornmissi0n clirects CP1O t0 pr0vi^e comp1ete agreernent withi| 15 working day5. 4. A show-cause noti'e ^s issued t0 CPI0 unde' |ection 20(1) imp0sing pena1ty of Rs. 15,000/- for malafide delay exceecling 60 day5.\nUncertain Tokens Requiring Caution: 'inf0rma'ion' (52%), '8(1)(cl)' (52%), '5ub5t~nt|ating' (52%), 'confide'c^.' (52%), '^s' (52%), '|ection' (52%), '20(1)' (52%), 'imp0sing' (52%), 'pena1ty' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.5,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8035,
+            "latency_ms": 80.84
+          }
+        },
+        {
+          "question_id": "q6",
+          "question": "What is the compliance timeline given to the CPIO to provide the requested agreement?",
+          "critical_type": "compliance_timeline",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: C3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CIS1ON FIL3 ^O: CIC/MORTH/A/2025/001429 Appellant: 5hr~ Arvincl Mehta Public 4uthority: ~ini5try of Road Tran'port & Highways Date 0f Hearing: 22.01.20^5 Date 0f Deci'i0n: 28.01.20^5 F4CTS 0F THE CA^E: 1. T'e App|l1ant s0ught detail5 of t0ll collecti0n c0nce5sionaire agreernent for NH-48. 2. The CPIO wrongfully denied inf0rma'ion under Section 8(1)(cl) without 5ub5t~nt|ating comrnercial confide'c^. 3. Cornmissi0n clirects CP1O t0 pr0vi^e comp1ete agreernent withi| 15 working day5. 4. A show-cause noti'e ^s issued t0 CPI0 unde' |ection 20(1) imp0sing pena1ty of Rs. 15,000/- for malafide delay exceecling 60 day5. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.3333333333333333,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8035,
+            "latency_ms": 83.54
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 66.5%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nC3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CIS1ON FIL3 ^O: CIC/MORTH/A/2025/001429 Appellant: 5hr~ Arvincl Mehta Public 4uthority: ~ini5try of Road Tran'port & Highways Date 0f Hearing: 22.01.20^5 Date 0f Deci'i0n: 28.01.20^5 F4CTS 0F THE CA^E: 1. T'e App|l1ant s0ught detail5 of t0ll collecti0n c0nce5sionaire agreernent for NH-48. 2. The CPIO wrongfully denied inf0rma'ion under Section 8(1)(cl) without 5ub5t~nt|ating comrnercial confide'c^. 3. Cornmissi0n clirects CP1O t0 pr0vi^e comp1ete agreernent withi| 15 working day5. 4. A show-cause noti'e ^s issued t0 CPI0 unde' |ection 20(1) imp0sing pena1ty of Rs. 15,000/- for malafide delay exceecling 60 day5.\nUncertain Tokens Requiring Caution: 'inf0rma'ion' (52%), '8(1)(cl)' (52%), '5ub5t~nt|ating' (52%), 'confide'c^.' (52%), '^s' (52%), '|ection' (52%), '20(1)' (52%), 'imp0sing' (52%), 'pena1ty' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.3333333333333333,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8035,
+            "latency_ms": 80.99
+          }
+        },
+        {
+          "question_id": "q7",
+          "question": "Who was the appellant and which public authority was involved in the RTI appeal?",
+          "critical_type": "entity_identification",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: C3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CIS1ON FIL3 ^O: CIC/MORTH/A/2025/001429 Appellant: 5hr~ Arvincl Mehta Public 4uthority: ~ini5try of Road Tran'port & Highways Date 0f Hearing: 22.01.20^5 Date 0f Deci'i0n: 28.01.20^5 F4CTS 0F THE CA^E: 1. T'e App|l1ant s0ught detail5 of t0ll collecti0n c0nce5sionaire agreernent for NH-48. 2. The CPIO wrongfully denied inf0rma'ion under Section 8(1)(cl) without 5ub5t~nt|ating comrnercial confide'c^. 3. Cornmissi0n clirects CP1O t0 pr0vi^e comp1ete agreernent withi| 15 working day5. 4. A show-cause noti'e ^s issued t0 CPI0 unde' |ection 20(1) imp0sing pena1ty of Rs. 15,000/- for malafide delay exceecling 60 day5. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.8035,
+            "latency_ms": 81.5
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 66.5%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nC3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CIS1ON FIL3 ^O: CIC/MORTH/A/2025/001429 Appellant: 5hr~ Arvincl Mehta Public 4uthority: ~ini5try of Road Tran'port & Highways Date 0f Hearing: 22.01.20^5 Date 0f Deci'i0n: 28.01.20^5 F4CTS 0F THE CA^E: 1. T'e App|l1ant s0ught detail5 of t0ll collecti0n c0nce5sionaire agreernent for NH-48. 2. The CPIO wrongfully denied inf0rma'ion under Section 8(1)(cl) without 5ub5t~nt|ating comrnercial confide'c^. 3. Cornmissi0n clirects CP1O t0 pr0vi^e comp1ete agreernent withi| 15 working day5. 4. A show-cause noti'e ^s issued t0 CPI0 unde' |ection 20(1) imp0sing pena1ty of Rs. 15,000/- for malafide delay exceecling 60 day5.\nUncertain Tokens Requiring Caution: 'inf0rma'ion' (52%), '8(1)(cl)' (52%), '5ub5t~nt|ating' (52%), 'confide'c^.' (52%), '^s' (52%), '|ection' (52%), '20(1)' (52%), 'imp0sing' (52%), 'pena1ty' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 0.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.8035,
+            "latency_ms": 83.32
+          }
+        },
+        {
+          "question_id": "q8",
+          "question": "What is the decision file number of the Central Information Commission order?",
+          "critical_type": "file_identifier",
+          "baseline": {
+            "answer": "Based on the document evidence [Page 1]: C3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CIS1ON FIL3 ^O: CIC/MORTH/A/2025/001429 Appellant: 5hr~ Arvincl Mehta Public 4uthority: ~ini5try of Road Tran'port & Highways Date 0f Hearing: 22.01.20^5 Date 0f Deci'i0n: 28.01.20^5 F4CTS 0F THE CA^E: 1. T'e App|l1ant s0ught detail5 of t0ll collecti0n c0nce5sionaire agreernent for NH-48. 2. The CPIO wrongfully denied inf0rma'ion under Section 8(1)(cl) without 5ub5t~nt|ating comrnercial confide'c^. 3. Cornmissi0n clirects CP1O t0 pr0vi^e comp1ete agreernent withi| 15 working day5. 4. A show-cause noti'e ^s issued t0 CPI0 unde' |ection 20(1) imp0sing pena1ty of Rs. 15,000/- for malafide delay exceecling 60 day5. However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": false,
+            "evidence_mean_conf": 0.7289,
+            "latency_ms": 80.19
+          },
+          "proposed": {
+            "answer": "Based on the document evidence [Page 1]: 66.5%, Status: \u26a0 FLAGGED (Low-Confidence OCR Tokens Detected)):\nC3NTRAL 1NF0RMAT|ON C0MMISSION 8aba Gangnath Marg, Munirk^, New Delhi - 110067 D3CIS1ON FIL3 ^O: CIC/MORTH/A/2025/001429 Appellant: 5hr~ Arvincl Mehta Public 4uthority: ~ini5try of Road Tran'port & Highways Date 0f Hearing: 22.01.20^5 Date 0f Deci'i0n: 28.01.20^5 F4CTS 0F THE CA^E: 1. T'e App|l1ant s0ught detail5 of t0ll collecti0n c0nce5sionaire agreernent for NH-48. 2. The CPIO wrongfully denied inf0rma'ion under Section 8(1)(cl) without 5ub5t~nt|ating comrnercial confide'c^. 3. Cornmissi0n clirects CP1O t0 pr0vi^e comp1ete agreernent withi| 15 working day5. 4. A show-cause noti'e ^s issued t0 CPI0 unde' |ection 20(1) imp0sing pena1ty of Rs. 15,000/- for malafide delay exceecling 60 day5.\nUncertain Tokens Requiring Caution: 'CIC/MORTH/A/2025/001429' (52%), 'Cornmissi0n' (52%), 'CP1O' (52%), 'pr0vi^e' (52%), 'comp1ete' (52%), 'withi|' (52%), 'day5.' (52%) However, critical figures or dates exhibit low OCR confidence and should be verified against the original scan.",
+            "fact_accuracy": 1.0,
+            "has_warning": true,
+            "warning_text": "The supporting evidence contains low-confidence OCR text. Verify against the original document.",
+            "risk_level": "HIGH_RISK",
+            "evidence_mean_conf": 0.7289,
+            "latency_ms": 78.88
+          }
+        }
+      ]
+    }
+  }
+}

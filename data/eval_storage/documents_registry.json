@@ -1,0 +1,366 @@
+{
+  "f606c639-e7b6-42b4-a381-edf7b8851cad": {
+    "document_id": "f606c639-e7b6-42b4-a381-edf7b8851cad",
+    "filename": "delhi_high_court_order_2024.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.99,
+    "min_confidence": 0.99,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:02:17.035044+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\delhi_high_court_order_2024.pdf"
+    }
+  },
+  "04e743ba-b180-4cae-bbec-66eeefe25eb7": {
+    "document_id": "04e743ba-b180-4cae-bbec-66eeefe25eb7",
+    "filename": "rti_cic_decision_2025.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.99,
+    "min_confidence": 0.99,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:02:17.103357+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\rti_cic_decision_2025.pdf"
+    }
+  },
+  "214b8020-c7f8-4194-9cd2-432862ab84ab": {
+    "document_id": "214b8020-c7f8-4194-9cd2-432862ab84ab",
+    "filename": "delhi_high_court_order_2024.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.99,
+    "min_confidence": 0.99,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:03:39.246164+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\delhi_high_court_order_2024.pdf"
+    }
+  },
+  "dedfa2b4-3e23-4b44-93ca-c4836f5cfa51": {
+    "document_id": "dedfa2b4-3e23-4b44-93ca-c4836f5cfa51",
+    "filename": "rti_cic_decision_2025.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.99,
+    "min_confidence": 0.99,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:03:39.389270+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\rti_cic_decision_2025.pdf"
+    }
+  },
+  "517df58f-8ab3-48c1-94d7-fa3b4745c887": {
+    "document_id": "517df58f-8ab3-48c1-94d7-fa3b4745c887",
+    "filename": "delhi_high_court_order_2024.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.99,
+    "min_confidence": 0.99,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:05:06.211617+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\delhi_high_court_order_2024.pdf"
+    }
+  },
+  "5bd320b0-a826-4143-81db-8557525c710a": {
+    "document_id": "5bd320b0-a826-4143-81db-8557525c710a",
+    "filename": "rti_cic_decision_2025.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.99,
+    "min_confidence": 0.99,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:05:06.249107+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\rti_cic_decision_2025.pdf"
+    }
+  },
+  "c4a0e268-71c3-43b0-89b7-6c6d8199e69c": {
+    "document_id": "c4a0e268-71c3-43b0-89b7-6c6d8199e69c",
+    "filename": "delhi_high_court_order_2024_low.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:05:07.837542+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_low.pdf"
+    }
+  },
+  "6833e675-fb29-4e7f-816b-b6293ed00030": {
+    "document_id": "6833e675-fb29-4e7f-816b-b6293ed00030",
+    "filename": "rti_cic_decision_2025_low.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:05:08.250495+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_low.pdf"
+    }
+  },
+  "e37492fb-bb58-478f-af48-dcfe52f0a7b7": {
+    "document_id": "e37492fb-bb58-478f-af48-dcfe52f0a7b7",
+    "filename": "delhi_high_court_order_2024_medium.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:05:08.962274+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_medium.pdf"
+    }
+  },
+  "884fe90d-ae5d-45ed-85f5-ccb7d3f9c368": {
+    "document_id": "884fe90d-ae5d-45ed-85f5-ccb7d3f9c368",
+    "filename": "rti_cic_decision_2025_medium.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:05:09.487832+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_medium.pdf"
+    }
+  },
+  "accebfe2-e5f2-43c4-825c-15b5e159065e": {
+    "document_id": "accebfe2-e5f2-43c4-825c-15b5e159065e",
+    "filename": "delhi_high_court_order_2024_high.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:05:10.283249+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_high.pdf"
+    }
+  },
+  "9a96048b-b88c-4459-b483-83c285941ff8": {
+    "document_id": "9a96048b-b88c-4459-b483-83c285941ff8",
+    "filename": "rti_cic_decision_2025_high.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:05:11.003114+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_high.pdf"
+    }
+  },
+  "5e064f0f-dc17-44c2-96c6-22c153c43164": {
+    "document_id": "5e064f0f-dc17-44c2-96c6-22c153c43164",
+    "filename": "delhi_high_court_order_2024.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.9567,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:06:52.274105+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\delhi_high_court_order_2024.pdf"
+    }
+  },
+  "18b6a56c-a800-4d1d-b07f-4834c41a5caf": {
+    "document_id": "18b6a56c-a800-4d1d-b07f-4834c41a5caf",
+    "filename": "rti_cic_decision_2025.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.9372,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:06:52.319076+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\rti_cic_decision_2025.pdf"
+    }
+  },
+  "98ebf293-ca47-4939-915e-820e9811a049": {
+    "document_id": "98ebf293-ca47-4939-915e-820e9811a049",
+    "filename": "delhi_high_court_order_2024_low.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:06:53.513534+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_low.pdf"
+    }
+  },
+  "88977a1f-5211-4d5d-836e-dbc2772c6542": {
+    "document_id": "88977a1f-5211-4d5d-836e-dbc2772c6542",
+    "filename": "rti_cic_decision_2025_low.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:06:53.578304+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_low.pdf"
+    }
+  },
+  "4690f6a7-6fb0-4247-bdc2-b7c2965f15f8": {
+    "document_id": "4690f6a7-6fb0-4247-bdc2-b7c2965f15f8",
+    "filename": "delhi_high_court_order_2024_medium.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:06:53.839247+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_medium.pdf"
+    }
+  },
+  "d3bddadd-64f1-462f-8270-2c0353d25e90": {
+    "document_id": "d3bddadd-64f1-462f-8270-2c0353d25e90",
+    "filename": "rti_cic_decision_2025_medium.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:06:53.943544+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_medium.pdf"
+    }
+  },
+  "09f47b6e-71d7-450e-b2d3-969baf20e576": {
+    "document_id": "09f47b6e-71d7-450e-b2d3-969baf20e576",
+    "filename": "delhi_high_court_order_2024_high.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:06:54.179223+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_high.pdf"
+    }
+  },
+  "e1382084-9cf3-42ac-a558-59aed43bcac8": {
+    "document_id": "e1382084-9cf3-42ac-a558-59aed43bcac8",
+    "filename": "rti_cic_decision_2025_high.pdf",
+    "pages": 1,
+    "chunks": 0,
+    "average_confidence": 0.0,
+    "min_confidence": 0.0,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:06:54.276628+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_high.pdf"
+    }
+  },
+  "1ccdc380-81dd-42c0-b8fe-5f6553460a6f": {
+    "document_id": "1ccdc380-81dd-42c0-b8fe-5f6553460a6f",
+    "filename": "delhi_high_court_order_2024.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.9567,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:08:04.462411+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\delhi_high_court_order_2024.pdf"
+    }
+  },
+  "49f6f576-adbe-443e-9d03-c29b08293634": {
+    "document_id": "49f6f576-adbe-443e-9d03-c29b08293634",
+    "filename": "rti_cic_decision_2025.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.9372,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:08:04.512715+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\clean\\rti_cic_decision_2025.pdf"
+    }
+  },
+  "69d9d13d-1a36-4bd7-bd61-4e27065bb6b2": {
+    "document_id": "69d9d13d-1a36-4bd7-bd61-4e27065bb6b2",
+    "filename": "delhi_high_court_order_2024_low.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.9343,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:08:06.092915+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_low.pdf"
+    }
+  },
+  "9f6333f5-0cf2-4d6e-9e3f-ad2cb79b2d8e": {
+    "document_id": "9f6333f5-0cf2-4d6e-9e3f-ad2cb79b2d8e",
+    "filename": "rti_cic_decision_2025_low.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.9015,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:08:06.559205+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_low.pdf"
+    }
+  },
+  "56c28f32-40c5-4d88-9a0c-d5092adec498": {
+    "document_id": "56c28f32-40c5-4d88-9a0c-d5092adec498",
+    "filename": "delhi_high_court_order_2024_medium.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.8879,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:08:08.248432+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_medium.pdf"
+    }
+  },
+  "a142acc5-aeac-4494-b705-567e86d9d507": {
+    "document_id": "a142acc5-aeac-4494-b705-567e86d9d507",
+    "filename": "rti_cic_decision_2025_medium.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.8152,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:08:08.881674+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_medium.pdf"
+    }
+  },
+  "d223ad26-a517-4bdf-8f72-242badc2404d": {
+    "document_id": "d223ad26-a517-4bdf-8f72-242badc2404d",
+    "filename": "delhi_high_court_order_2024_high.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.7777,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:08:11.139998+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\delhi_high_court_order_2024_high.pdf"
+    }
+  },
+  "7570dcac-5833-455e-91ee-ff9d537d8e65": {
+    "document_id": "7570dcac-5833-455e-91ee-ff9d537d8e65",
+    "filename": "rti_cic_decision_2025_high.pdf",
+    "pages": 1,
+    "chunks": 1,
+    "average_confidence": 0.756,
+    "min_confidence": 0.52,
+    "file_size_bytes": 0,
+    "created_at": "2026-09-18T05:08:11.879985+00:00",
+    "metadata": {
+      "source_path": "D:\\SATYAM SING\\CODE\\project\\Confidence-Aware RAG System\\data\\degraded\\rti_cic_decision_2025_high.pdf"
+    }
+  }
+}
