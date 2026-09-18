@@ -1,6 +1,7 @@
 # Confidence-Aware RAG for Noisy OCR-Based Documents
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://confidence-aware-rag.vercel.app/)
+[![Frontend (Vercel)](https://img.shields.io/badge/Frontend-Vercel%20Live-black?style=for-the-badge&logo=vercel)](https://confidence-aware-rag.vercel.app/)
+[![Backend (Render)](https://img.shields.io/badge/Backend-Render%20Live-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://confidence-aware-rag-backend.onrender.com/docs)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-green.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com)
 [![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas%20Ready-green.svg)](https://www.mongodb.com/atlas)
@@ -8,7 +9,8 @@
 [![Vite](https://img.shields.io/badge/Vite-6.0+-646CFF.svg)](https://vitejs.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> 🚀 **Live Web Application**: [https://confidence-aware-rag.vercel.app](https://confidence-aware-rag.vercel.app/)
+> 🌐 **Live Web Application**: [https://confidence-aware-rag.vercel.app](https://confidence-aware-rag.vercel.app/)  
+> ⚡ **Live Backend API & Swagger Docs**: [https://confidence-aware-rag-backend.onrender.com/docs](https://confidence-aware-rag-backend.onrender.com/docs)
 
 An end-to-end, production-grade **Retrieval-Augmented Generation (RAG)** platform engineered for scanned legal, administrative, and technical documents (RTI replies, court orders, gazette notifications, resumes, and complex multi-page reports).
 
