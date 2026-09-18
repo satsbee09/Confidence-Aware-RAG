@@ -81,11 +81,11 @@ def create_application() -> FastAPI:
     # ---------------------------------------------------------
     # CORS Middleware
     # ---------------------------------------------------------
-    origins = settings.CORS_ORIGINS if isinstance(settings.CORS_ORIGINS, list) else ["*"]
     application.add_middleware(
         CORSMiddleware,
-        allow_origins=origins,
-        allow_credentials=True,
+        allow_origins=["*"],
+        allow_origin_regex=r"https?://.*",
+        allow_credentials=False,
         allow_methods=["*"],
         allow_headers=["*"],
     )
@@ -128,7 +128,7 @@ def create_application() -> FastAPI:
 
 
     # ---------------------------------------------------------
-    # Root Endpoint
+    # Root & Health Endpoints
     # ---------------------------------------------------------
     @application.get("/", tags=["Root"])
     async def root():
@@ -138,6 +138,14 @@ def create_application() -> FastAPI:
             "status": "operational",
             "docs_url": "/docs",
             "api_v1": settings.API_V1_STR,
+        }
+
+    @application.get("/health", tags=["Health"])
+    async def health():
+        return {
+            "status": "healthy",
+            "app": settings.APP_NAME,
+            "version": settings.APP_VERSION,
         }
 
     # ---------------------------------------------------------

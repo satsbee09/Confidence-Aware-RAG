@@ -1,6 +1,17 @@
 import type { DocumentSummary, DocumentIngestResponse, QueryResponse, ComparisonResponse, BenchmarkReport } from './types';
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string || '/api/v1').replace(/\/+$/, '');
+function resolveApiBase(): string {
+  let base = (import.meta.env.VITE_API_BASE_URL as string || '').trim().replace(/\/+$/, '');
+  if (!base) {
+    return '/api/v1';
+  }
+  if (!base.endsWith('/api/v1')) {
+    base = `${base}/api/v1`;
+  }
+  return base;
+}
+
+const API_BASE = resolveApiBase();
 
 export async function fetchHealth(): Promise<{ status: string; app: string; version: string }> {
   const res = await fetch(`${API_BASE}/health`);
