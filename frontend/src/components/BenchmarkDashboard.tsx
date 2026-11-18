@@ -7,15 +7,19 @@ import confetti from 'canvas-confetti';
 
 export const BenchmarkDashboard: React.FC = () => {
   const [report, setReport] = useState<BenchmarkReport | null>(null);
+  const [loading, setLoading] = useState(true);
   const [selectedTier, setSelectedTier] = useState<string>('all');
 
   useEffect(() => {
     async function loadBenchmark() {
+      setLoading(true);
       try {
         const data = await fetchBenchmarkReport();
         setReport(data);
       } catch (e) {
         console.error('Failed to load benchmark data', e);
+      } finally {
+        setLoading(false);
       }
     }
     loadBenchmark();
@@ -31,6 +35,60 @@ export const BenchmarkDashboard: React.FC = () => {
 
   const tiers = report?.tiers || {};
   const tierKeys = Object.keys(tiers);
+
+  if (loading) {
+    return (
+      <div className="section-container">
+        <div className="section-header">
+          <div>
+            <div className="skeleton-bar title-bar" style={{ width: '60%', height: '1.4rem', marginBottom: '0.5rem' }} />
+            <div className="skeleton-bar text-bar" style={{ width: '85%', height: '0.8rem' }} />
+          </div>
+        </div>
+
+        <div className="kpi-grid">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="kpi-card bench-skeleton-card">
+              <div className="skeleton-bar" style={{ width: '3rem', height: '3rem', borderRadius: '12px' }} />
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                <div className="skeleton-bar text-bar" style={{ width: '70%', height: '0.7rem' }} />
+                <div className="skeleton-bar title-bar" style={{ width: '40%', height: '1.6rem' }} />
+                <div className="skeleton-bar text-bar short" style={{ width: '55%', height: '0.6rem' }} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="bench-skeleton-card" style={{ padding: '1.5rem', borderRadius: '14px', marginBottom: '1.25rem' }}>
+          <div className="skeleton-bar title-bar" style={{ width: '50%', height: '1rem', marginBottom: '1rem' }} />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+            {[1, 2, 3].map((i) => (
+              <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <div className="skeleton-bar text-bar" style={{ width: '60%', height: '0.7rem' }} />
+                <div className="skeleton-bar" style={{ width: '100%', height: '2.2rem', borderRadius: '8px' }} />
+                <div className="skeleton-bar text-bar" style={{ width: '80%', height: '0.6rem' }} />
+                <div className="skeleton-bar text-bar short" style={{ width: '65%', height: '0.6rem' }} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bench-skeleton-card" style={{ padding: '1.5rem', borderRadius: '14px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
+            <div className="skeleton-bar title-bar" style={{ width: '35%', height: '1rem' }} />
+            <div style={{ display: 'flex', gap: '0.4rem' }}>
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div key={i} className="skeleton-bar" style={{ width: '3.5rem', height: '1.6rem', borderRadius: '8px' }} />
+              ))}
+            </div>
+          </div>
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+            <div key={i} className="skeleton-bar" style={{ width: '100%', height: '2rem', marginBottom: '0.35rem', borderRadius: '6px' }} />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="section-container">

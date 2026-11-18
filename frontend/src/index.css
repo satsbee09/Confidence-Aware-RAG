@@ -5033,6 +5033,11 @@ textarea {
   background-size: 200% 100%;
 }
 
+.bench-skeleton-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
 /* Empty State Enhancements */
 .answer-empty-placeholder {
   display: flex;
