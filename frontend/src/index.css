@@ -5359,6 +5359,35 @@ textarea {
   text-align: right;
 }
 
+.settings-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--bg-input);
+  padding: 2px;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.stt-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.stt-option.active {
+  background: var(--primary-gradient);
+  color: #09090b;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+}
+
 .p-6 {
   padding: 1.5rem;
 }

@@ -13,7 +13,7 @@ import { HelpGuideModal } from './components/HelpGuideModal';
 import { AuthProfileModal, DEMO_USERS } from './components/AuthProfileModal';
 import type { DocumentSummary, UserProfile } from './types';
 import { fetchDocuments, fetchHealth } from './api';
-import { Settings as SettingsIcon, Cpu, Gauge, ShieldAlert, Server } from 'lucide-react';
+import { Settings as SettingsIcon, Cpu, Gauge, ShieldAlert, Server, Sun, Moon, Brain, Database, Info } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<NavTabType>('dashboard');
@@ -242,6 +242,29 @@ export default function App() {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '1rem' }}>
+                  {/* Theme Toggle */}
+                  <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      {theme === 'dark' ? <Moon size={18} className="text-primary" /> : <Sun size={18} className="text-primary" />}
+                      <strong style={{ fontSize: '0.92rem', color: 'var(--text-primary)' }}>Appearance</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Theme</span>
+                      <button
+                        onClick={toggleTheme}
+                        className="settings-theme-toggle"
+                      >
+                        <span className={`stt-option ${theme === 'dark' ? 'active' : ''}`}><Moon size={12} /> Dark</span>
+                        <span className={`stt-option ${theme === 'light' ? 'active' : ''}`}><Sun size={12} /> Light</span>
+                      </button>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Design System</span>
+                      <strong style={{ fontSize: '0.82rem' }}>Ember (Amber + Red)</strong>
+                    </div>
+                  </div>
+
+                  {/* Backend Connection */}
                   <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                       <Server size={18} className="text-primary" />
@@ -254,8 +277,33 @@ export default function App() {
                         {backendOnline ? 'Online & Healthy' : 'Offline'}
                       </span>
                     </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Hosting</span>
+                      <strong style={{ fontSize: '0.82rem' }}>Render (Cloud)</strong>
+                    </div>
                   </div>
 
+                  {/* LLM Model */}
+                  <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <Brain size={18} className="text-primary" />
+                      <strong style={{ fontSize: '0.92rem', color: 'var(--text-primary)' }}>LLM Configuration</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Provider</span>
+                      <strong style={{ fontSize: '0.82rem' }}>Groq (Ultra-Low Latency)</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Model</span>
+                      <span className="badge badge-primary">LLaMA 3 — 70B</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Context Window</span>
+                      <strong style={{ fontSize: '0.82rem' }}>8,192 tokens</strong>
+                    </div>
+                  </div>
+
+                  {/* Embedding Model */}
                   <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                       <Cpu size={18} className="text-primary" />
@@ -271,6 +319,7 @@ export default function App() {
                     </div>
                   </div>
 
+                  {/* Confidence Reranking */}
                   <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                       <Gauge size={18} className="text-primary" />
@@ -279,7 +328,7 @@ export default function App() {
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Weights</span>
                       <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--accent-color)', background: 'rgba(255,255,255,0.06)', padding: '0.15rem 0.45rem', borderRadius: 4 }}>
-                        0.5×Sim + 0.5×OCR
+                        0.5 * Sim + 0.5 * OCR
                       </code>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -288,6 +337,7 @@ export default function App() {
                     </div>
                   </div>
 
+                  {/* Risk Level Thresholds */}
                   <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                       <ShieldAlert size={18} className="text-primary" />
@@ -295,7 +345,7 @@ export default function App() {
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <span className="badge badge-low-risk">LOW RISK</span>
-                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.82rem' }}>OCR Confidence ≥ 85%</span>
+                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.82rem' }}>OCR Confidence &ge; 85%</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <span className="badge badge-medium-risk">MEDIUM RISK</span>
@@ -305,6 +355,49 @@ export default function App() {
                       <span className="badge badge-high-risk">HIGH RISK</span>
                       <span style={{ color: 'var(--text-secondary)', fontSize: '0.82rem' }}>OCR Confidence &lt; 70%</span>
                     </div>
+                  </div>
+
+                  {/* Storage */}
+                  <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <Database size={18} className="text-primary" />
+                      <strong style={{ fontSize: '0.92rem', color: 'var(--text-primary)' }}>Storage</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Document Store</span>
+                      <strong style={{ fontSize: '0.82rem' }}>MongoDB Atlas</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Vector Index</span>
+                      <strong style={{ fontSize: '0.82rem' }}>FAISS (Flat L2)</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>OCR Engine</span>
+                      <strong style={{ fontSize: '0.82rem' }}>Tesseract 5.x</strong>
+                    </div>
+                  </div>
+
+                  {/* About */}
+                  <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <Info size={18} className="text-primary" />
+                      <strong style={{ fontSize: '0.92rem', color: 'var(--text-primary)' }}>About DocSage</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Version</span>
+                      <span className="badge badge-primary">v1.0.0</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Frontend</span>
+                      <strong style={{ fontSize: '0.82rem' }}>React 19 + Vite</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Backend</span>
+                      <strong style={{ fontSize: '0.82rem' }}>FastAPI + Python</strong>
+                    </div>
+                    <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1.5, marginTop: '0.25rem' }}>
+                      Confidence-Aware RAG system for scanned legal &amp; government documents with OCR quality propagation and hallucination guardrails.
+                    </p>
                   </div>
                 </div>
               </motion.div>
