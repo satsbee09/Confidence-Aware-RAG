@@ -3715,6 +3715,31 @@ input:checked + .slider-round:before {
   border: 1px solid var(--danger-border);
 }
 
+.export-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--primary-gradient);
+  color: #09090b;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.export-pdf-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.export-pdf-btn:active {
+  transform: scale(0.97);
+}
+
 .answer-body-text {
   font-size: 0.88rem;
   color: var(--text-primary);
