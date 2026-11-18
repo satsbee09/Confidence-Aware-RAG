@@ -45,7 +45,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
         <div className="sidebar-brand-text">
           <div className="sidebar-brand-name">DocSage</div>
-          <div className="sidebar-brand-tagline">AI for Legal Documents</div>
+          <div className="sidebar-brand-tagline">Confidence-Aware RAG</div>
         </div>
       </div>
 

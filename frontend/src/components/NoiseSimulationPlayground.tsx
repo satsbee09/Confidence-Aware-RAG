@@ -47,7 +47,7 @@ export const NoiseSimulationPlayground: React.FC = () => {
       particleCount: 80,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#6366f1', '#10b981', '#a855f7', '#38bdf8'],
+      colors: ['#f59e0b', '#fbbf24', '#d97706', '#fde68a'],
     });
   };
 

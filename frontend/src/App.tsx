@@ -13,11 +13,11 @@ import { HelpGuideModal } from './components/HelpGuideModal';
 import { AuthProfileModal, DEMO_USERS } from './components/AuthProfileModal';
 import type { DocumentSummary, UserProfile } from './types';
 import { fetchDocuments, fetchHealth } from './api';
-import { Settings as SettingsIcon } from 'lucide-react';
+import { Settings as SettingsIcon, Cpu, Gauge, ShieldAlert, Server } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<NavTabType>('dashboard');
-  const [theme, setTheme] = useState<'dark' | 'light'>('light'); // default modern light mode matching reference
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [backendOnline, setBackendOnline] = useState<boolean>(false);
   const [documents, setDocuments] = useState<DocumentSummary[]>([]);
   const [selectedDocId, setSelectedDocId] = useState<string | null>(null);
@@ -228,31 +228,88 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="viewport-tab-page settings-card-view"
+                className="viewport-tab-page"
+                style={{ maxWidth: 860 }}
               >
-                <div className="card-glass p-6">
-                  <div className="flex items-center gap-3 mb-4">
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.35rem' }}>
                     <SettingsIcon size={24} className="text-primary" />
-                    <h2 className="text-xl font-bold">System Configuration & API Settings</h2>
+                    <h2 style={{ fontSize: '1.25rem', fontWeight: 600, fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}>System Configuration</h2>
                   </div>
-                  <div className="settings-grid-info">
-                    <div className="setting-item">
-                      <span className="text-muted">FastAPI Backend Status:</span>
-                      <strong className={backendOnline ? 'text-success' : 'text-danger'}>
-                        {backendOnline ? 'Online & Healthy (http://127.0.0.1:8000)' : 'Offline / Disconnected'}
-                      </strong>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                    Runtime settings, model configuration, and API connection details.
+                  </p>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '1rem' }}>
+                  <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <Server size={18} className="text-primary" />
+                      <strong style={{ fontSize: '0.92rem', color: 'var(--text-primary)' }}>Backend Connection</strong>
                     </div>
-                    <div className="setting-item">
-                      <span className="text-muted">Active Embedding Model:</span>
-                      <strong>all-MiniLM-L6-v2 (384-dimensional dense vectors)</strong>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>FastAPI Status</span>
+                      <span className={`backend-status-pill ${backendOnline ? 'online' : 'offline'}`} style={{ fontSize: '0.72rem' }}>
+                        <span className="status-pulse-dot" style={{ width: 6, height: 6 }} />
+                        {backendOnline ? 'Online & Healthy' : 'Offline'}
+                      </span>
                     </div>
-                    <div className="setting-item">
-                      <span className="text-muted">Confidence Reranking Weights:</span>
-                      <strong>50% Cosine Similarity + 50% OCR Confidence</strong>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Endpoint</span>
+                      <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.06)', padding: '0.15rem 0.45rem', borderRadius: 5 }}>
+                        http://127.0.0.1:8000
+                      </code>
                     </div>
-                    <div className="setting-item">
-                      <span className="text-muted">Risk Level Thresholds:</span>
-                      <strong>LOW (≥85%), MEDIUM (70-84%), HIGH (&lt;70%)</strong>
+                  </div>
+
+                  <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <Cpu size={18} className="text-primary" />
+                      <strong style={{ fontSize: '0.92rem', color: 'var(--text-primary)' }}>Embedding Model</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Model</span>
+                      <strong style={{ fontSize: '0.82rem' }}>all-MiniLM-L6-v2</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Vector Dimensions</span>
+                      <span className="badge badge-primary">384-d dense</span>
+                    </div>
+                  </div>
+
+                  <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <Gauge size={18} className="text-primary" />
+                      <strong style={{ fontSize: '0.92rem', color: 'var(--text-primary)' }}>Confidence Reranking</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Weights</span>
+                      <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--accent-color)', background: 'rgba(255,255,255,0.06)', padding: '0.15rem 0.45rem', borderRadius: 4 }}>
+                        0.5×Sim + 0.5×OCR
+                      </code>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Strategy</span>
+                      <strong style={{ fontSize: '0.82rem' }}>Hybrid Cosine + OCR</strong>
+                    </div>
+                  </div>
+
+                  <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <ShieldAlert size={18} className="text-primary" />
+                      <strong style={{ fontSize: '0.92rem', color: 'var(--text-primary)' }}>Risk Level Thresholds</strong>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span className="badge badge-low-risk">LOW RISK</span>
+                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.82rem' }}>OCR Confidence ≥ 85%</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span className="badge badge-medium-risk">MEDIUM RISK</span>
+                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.82rem' }}>OCR Confidence 70–84%</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span className="badge badge-high-risk">HIGH RISK</span>
+                      <span style={{ color: 'var(--text-secondary)', fontSize: '0.82rem' }}>OCR Confidence &lt; 70%</span>
                     </div>
                   </div>
                 </div>
