@@ -13,6 +13,10 @@ function resolveApiBase(): string {
 
 const API_BASE = resolveApiBase();
 
+export function getApiBaseUrl(): string {
+  return API_BASE;
+}
+
 export async function fetchHealth(): Promise<{ status: string; app: string; version: string }> {
   const res = await fetch(`${API_BASE}/health`);
   if (!res.ok) throw new Error(`Health check failed with status ${res.status}`);

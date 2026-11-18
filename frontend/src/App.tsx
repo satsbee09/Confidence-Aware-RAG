@@ -254,12 +254,6 @@ export default function App() {
                         {backendOnline ? 'Online & Healthy' : 'Offline'}
                       </span>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>Endpoint</span>
-                      <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.06)', padding: '0.15rem 0.45rem', borderRadius: 5 }}>
-                        http://127.0.0.1:8000
-                      </code>
-                    </div>
                   </div>
 
                   <div className="setting-item" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '0.65rem' }}>
