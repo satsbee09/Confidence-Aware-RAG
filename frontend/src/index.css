@@ -5490,6 +5490,230 @@ textarea {
 }
 
 /* ============================================================
+   Query History Panel
+   ============================================================ */
+.qh-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.qh-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.qh-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+}
+
+.qh-title-row h3 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.qh-count {
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--accent-color);
+  padding: 0.1rem 0.45rem;
+  border-radius: 6px;
+}
+
+.qh-refresh-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.qh-refresh-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.qh-spin {
+  animation: qh-spin-anim 1s linear infinite;
+}
+
+@keyframes qh-spin-anim {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.qh-search {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+}
+
+.qh-search-icon {
+  position: absolute;
+  left: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.qh-search-input {
+  width: 100%;
+  padding: 0.4rem 0.65rem 0.4rem 1.8rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: 7px;
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.qh-search-input:focus {
+  border-color: var(--primary-color);
+}
+
+.qh-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.35rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.qh-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.6rem 0.7rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all 0.15s;
+}
+
+.qh-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-subtle);
+}
+
+.qh-item.selected {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.qh-item-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.qh-risk-dot {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.qh-item-query {
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.qh-chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  margin-top: 1px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.qh-item:hover .qh-chevron {
+  opacity: 1;
+}
+
+.qh-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  padding-left: 1.1rem;
+}
+
+.qh-meta-conf {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.qh-meta-sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.5;
+}
+
+.qh-meta-time {
+  margin-left: auto;
+  font-style: italic;
+}
+
+.qh-risk-low { color: var(--success-text); }
+.qh-risk-med { color: var(--warning-text); }
+.qh-risk-high { color: var(--danger-text); }
+.text-danger { color: var(--danger-text); }
+
+.qh-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.qh-empty span {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.qh-empty p {
+  font-size: 0.72rem;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.qh-drawer {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-left: 1px solid var(--border-subtle);
+}
+
+/* ============================================================
    Welcome / Empty State
    ============================================================ */
 .docsage-welcome-state {

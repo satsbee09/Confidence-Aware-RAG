@@ -16,11 +16,13 @@ import {
   EyeOff,
   RotateCcw,
   PanelLeftClose,
-  PanelLeftOpen
+  PanelLeftOpen,
+  History
 } from 'lucide-react';
 import { PDFPageViewer } from './PDFPageViewer';
 import { AnswerPanel } from './AnswerPanel';
-import type { DocumentSummary, QueryResponse, ComparisonResponse, SourceCitation } from '../types';
+import { QueryHistoryPanel } from './QueryHistoryPanel';
+import type { DocumentSummary, QueryResponse, ComparisonResponse, SourceCitation, QueryHistoryItem } from '../types';
 import { queryPipeline, comparePipelines } from '../api';
 
 export type LayoutMode = 'default' | 'pdf-focus' | 'chat-focus' | 'zen';
@@ -47,6 +49,8 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
   const [comparisonResponse, setComparisonResponse] = useState<ComparisonResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [activeEvidence, setActiveEvidence] = useState<SourceCitation | null>(null);
+  const [historyOpen, setHistoryOpen] = useState<boolean>(false);
+  const [historyRefresh, setHistoryRefresh] = useState<number>(0);
 
   // Flexible User Layout Customization Preferences (persisted in localStorage)
   const [layoutMode, setLayoutMode] = useState<LayoutMode>(() => {
@@ -145,7 +149,22 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
       console.error('Query execution failed:', err);
     } finally {
       setLoading(false);
+      setHistoryRefresh((n) => n + 1);
     }
+  };
+
+  const handleSelectHistoryItem = (item: QueryHistoryItem) => {
+    setQueryResponse({
+      query: item.query,
+      answer: item.answer,
+      confidence_score: item.confidence_score,
+      risk_level: item.risk_level as any,
+      sources: [],
+      overall_warning: item.overall_warning,
+      mode: item.mode as any,
+      execution_time_ms: item.execution_time_ms,
+    });
+    setComparisonResponse(null);
   };
 
   // Handle click on evidence citation
@@ -289,6 +308,15 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
           >
             {statsVisible ? <EyeOff size={14} /> : <Eye size={14} />}
             <span>{statsVisible ? 'Hide Stats' : 'Show Stats'}</span>
+          </button>
+
+          <button
+            className={`layout-action-btn ${historyOpen ? 'active-toggle' : ''}`}
+            onClick={() => setHistoryOpen(!historyOpen)}
+            title="Toggle Query History"
+          >
+            <History size={14} />
+            <span>{historyOpen ? 'Hide History' : 'History'}</span>
           </button>
 
           <button
@@ -448,6 +476,24 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
             />
           </div>
         )}
+
+        {/* COLUMN 4: Query History Drawer */}
+        <AnimatePresence>
+          {historyOpen && (
+            <motion.div
+              className="workspace-column qh-drawer"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: 280, opacity: 1 }}
+              exit={{ width: 0, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              <QueryHistoryPanel
+                onSelectQuery={handleSelectHistoryItem}
+                refreshTrigger={historyRefresh}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

@@ -122,6 +122,21 @@ export interface ComparisonResponse {
   key_difference: string;
 }
 
+export interface QueryHistoryItem {
+  query_id: string;
+  query: string;
+  answer: string;
+  confidence_score: number;
+  risk_level: string;
+  overall_warning: string | null;
+  model: string;
+  document_id: string | null;
+  source_count: number;
+  mode: string;
+  execution_time_ms: number;
+  created_at: string;
+}
+
 export interface BenchmarkTierData {
   noise_tier: string;
   total_queries: number;

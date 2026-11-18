@@ -1,4 +1,4 @@
-import type { DocumentSummary, DocumentIngestResponse, QueryResponse, ComparisonResponse, BenchmarkReport } from './types';
+import type { DocumentSummary, DocumentIngestResponse, QueryResponse, ComparisonResponse, BenchmarkReport, QueryHistoryItem } from './types';
 
 function resolveApiBase(): string {
   let base = (import.meta.env.VITE_API_BASE_URL as string || '').trim().replace(/\/+$/, '');
@@ -96,6 +96,16 @@ export async function comparePipelines(query: string, docId?: string): Promise<C
 
 export function getPageImageUrl(docId: string, pageNumber: number, scale = 2.0): string {
   return `${API_BASE}/documents/${docId}/pages/${pageNumber}/image?scale=${scale}`;
+}
+
+export async function fetchQueryHistory(limit = 50): Promise<QueryHistoryItem[]> {
+  try {
+    const res = await fetch(`${API_BASE}/queries?limit=${limit}`);
+    if (res.ok) return res.json();
+  } catch {
+    // offline fallback
+  }
+  return [];
 }
 
 export async function fetchBenchmarkReport(): Promise<BenchmarkReport | null> {
