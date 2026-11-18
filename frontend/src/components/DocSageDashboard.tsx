@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FileText, 
-  Search, 
-  Plus, 
-  Layers, 
+import {
+  FileText,
+  Search,
+  Plus,
+  Layers,
   FileSpreadsheet,
   Activity,
   LayoutGrid,

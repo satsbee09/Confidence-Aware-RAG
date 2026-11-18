@@ -73,7 +73,7 @@ export const AnswerPanel: React.FC<AnswerPanelProps> = ({
       }
     }
 
-    if (total === 0) return { high: 72, med: 20, low: 8 };
+    if (total === 0) return { high: 0, med: 0, low: 0 };
     return {
       high: Math.round((highCount / total) * 100),
       med: Math.round((medCount / total) * 100),
