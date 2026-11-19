@@ -3,7 +3,11 @@ import type { DocumentSummary, DocumentIngestResponse, QueryResponse, Comparison
 function resolveApiBase(): string {
   let base = (import.meta.env.VITE_API_BASE_URL as string || '').trim().replace(/\/+$/, '');
   if (!base) {
-    return '/api/v1';
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') {
+      return '/api/v1';
+    }
+    return 'https://confidence-aware-rag-backend.onrender.com/api/v1';
   }
   if (!base.endsWith('/api/v1')) {
     base = `${base}/api/v1`;

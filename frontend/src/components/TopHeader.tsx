@@ -6,6 +6,7 @@ interface TopHeaderProps {
   theme: 'dark' | 'light';
   toggleTheme: () => void;
   backendOnline: boolean;
+  backendWaking?: boolean;
   onGlobalSearch: (q: string) => void;
   onOpenHelp: () => void;
   currentUser: UserProfile;
@@ -16,6 +17,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
   theme,
   toggleTheme,
   backendOnline,
+  backendWaking = false,
   onGlobalSearch,
   onOpenHelp,
   currentUser,
@@ -51,9 +53,9 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
       {/* Header Right Actions */}
       <div className="header-right-actions">
         {/* Backend Online Pill */}
-        <div className={`backend-status-pill ${backendOnline ? 'online' : 'offline'}`}>
+        <div className={`backend-status-pill ${backendOnline ? 'online' : backendWaking ? 'waking' : 'offline'}`}>
           <span className="status-pulse-dot" />
-          <span>{backendOnline ? 'API Ready' : 'Connecting...'}</span>
+          <span>{backendOnline ? 'API Ready' : backendWaking ? 'Waking up...' : 'Offline'}</span>
         </div>
 
         {/* Help Tour Trigger */}

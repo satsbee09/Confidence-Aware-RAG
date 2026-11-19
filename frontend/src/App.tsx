@@ -19,6 +19,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<NavTabType>('dashboard');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [backendOnline, setBackendOnline] = useState<boolean>(false);
+  const [backendWaking, setBackendWaking] = useState<boolean>(true);
   const [documents, setDocuments] = useState<DocumentSummary[]>([]);
   const [selectedDocId, setSelectedDocId] = useState<string | null>(null);
   const [isHelpOpen, setIsHelpOpen] = useState<boolean>(false);
@@ -87,18 +88,33 @@ export default function App() {
     try {
       await fetchHealth();
       setBackendOnline(true);
+      setBackendWaking(false);
+      return true;
     } catch {
       setBackendOnline(false);
+      return false;
     }
   };
 
   useEffect(() => {
-    checkHealth();
-    loadDocuments();
-    const interval = setInterval(() => {
-      checkHealth();
-    }, 10000);
-    return () => clearInterval(interval);
+    let cancelled = false;
+    const init = async () => {
+      setBackendWaking(true);
+      for (let attempt = 0; attempt < 6; attempt++) {
+        if (cancelled) return;
+        const ok = await checkHealth();
+        if (ok) {
+          loadDocuments();
+          return;
+        }
+        await new Promise((r) => setTimeout(r, 5000));
+      }
+      setBackendWaking(false);
+      loadDocuments();
+    };
+    init();
+    const interval = setInterval(checkHealth, 15000);
+    return () => { cancelled = true; clearInterval(interval); };
   }, []);
 
   const handleGlobalSearch = (_q: string) => {
@@ -128,6 +144,7 @@ export default function App() {
           theme={theme}
           toggleTheme={toggleTheme}
           backendOnline={backendOnline}
+          backendWaking={backendWaking}
           onGlobalSearch={handleGlobalSearch}
           onOpenHelp={() => setIsHelpOpen(true)}
           currentUser={currentUser}
