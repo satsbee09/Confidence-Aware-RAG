@@ -21,6 +21,9 @@ interface AnswerPanelProps {
   onQuerySubmit: (query: string, useConfidenceAware: boolean) => void;
   onSelectEvidence: (source: SourceCitation) => void;
   activeEvidence: SourceCitation | null;
+  errorMessage?: string | null;
+  onOpenUpload?: () => void;
+  hasDocuments?: boolean;
 }
 
 export const AnswerPanel: React.FC<AnswerPanelProps> = ({
@@ -30,6 +33,9 @@ export const AnswerPanel: React.FC<AnswerPanelProps> = ({
   onQuerySubmit,
   onSelectEvidence,
   activeEvidence,
+  errorMessage,
+  onOpenUpload,
+  hasDocuments = true,
 }) => {
   const [activeTab, setActiveTab] = useState<'ask' | 'compare'>('ask');
   const [queryInput, setQueryInput] = useState<string>('');
@@ -345,6 +351,48 @@ export const AnswerPanel: React.FC<AnswerPanelProps> = ({
 
       {/* Query Results / Output View */}
       <div className="answer-results-scrollable">
+        {errorMessage && (
+          <div
+            style={{
+              margin: '0.75rem 1rem 0.25rem',
+              padding: '0.75rem 1rem',
+              borderRadius: '8px',
+              backgroundColor: 'rgba(239, 68, 68, 0.12)',
+              border: '1px solid rgba(239, 68, 68, 0.35)',
+              color: '#f87171',
+              fontSize: '0.85rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '0.75rem',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+              <AlertTriangle size={18} style={{ flexShrink: 0 }} />
+              <span>{errorMessage}</span>
+            </div>
+            {onOpenUpload && (
+              <button
+                type="button"
+                onClick={onOpenUpload}
+                style={{
+                  padding: '0.35rem 0.75rem',
+                  fontSize: '0.78rem',
+                  fontWeight: 600,
+                  backgroundColor: 'var(--primary-color, #f59e0b)',
+                  color: '#000',
+                  border: 'none',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                Upload PDF
+              </button>
+            )}
+          </div>
+        )}
+
         {loading && (
           <div className="answer-loading-skeleton">
             <div className="skeleton-bar title-bar" />
@@ -569,8 +617,28 @@ export const AnswerPanel: React.FC<AnswerPanelProps> = ({
 
         {!loading && !queryResponse && !comparisonResponse && (
           <div className="answer-empty-placeholder">
-            <HelpCircle size={36} className="placeholder-icon" />
-            <p>Type a question above or click any suggested prompt to see live evidence grounding.</p>
+            {!hasDocuments ? (
+              <>
+                <FileText size={36} className="placeholder-icon text-warning" />
+                <p style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.25rem' }}>No Documents Uploaded Yet</p>
+                <p>Upload a PDF document first so DocSage can index its text and ground answers with OCR confidence scoring.</p>
+                {onOpenUpload && (
+                  <button
+                    type="button"
+                    onClick={onOpenUpload}
+                    className="empty-upload-btn"
+                    style={{ marginTop: '0.75rem' }}
+                  >
+                    Upload Document
+                  </button>
+                )}
+              </>
+            ) : (
+              <>
+                <HelpCircle size={36} className="placeholder-icon" />
+                <p>Type a question above or click any suggested prompt to see live evidence grounding.</p>
+              </>
+            )}
           </div>
         )}
       </div>

@@ -49,6 +49,7 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
   const [comparisonResponse, setComparisonResponse] = useState<ComparisonResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [activeEvidence, setActiveEvidence] = useState<SourceCitation | null>(null);
+  const [queryError, setQueryError] = useState<string | null>(null);
   const [historyOpen, setHistoryOpen] = useState<boolean>(false);
   const [historyRefresh, setHistoryRefresh] = useState<number>(0);
 
@@ -114,7 +115,12 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
 
   // Handle Query Submission
   const handleQuerySubmit = async (queryText: string, useConfidenceAware: boolean) => {
+    if (documents.length === 0) {
+      setQueryError('Vector store is empty. Please upload and ingest a document in the Upload tab first before asking questions.');
+      return;
+    }
     setLoading(true);
+    setQueryError(null);
     try {
       if (useConfidenceAware) {
         const res = await queryPipeline(queryText, selectedDocId || undefined, true);
@@ -145,8 +151,9 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
           }
         }
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error('Query execution failed:', err);
+      setQueryError(err.message || 'Query execution failed. Please verify that documents are uploaded and backend is online.');
     } finally {
       setLoading(false);
       setHistoryRefresh((n) => n + 1);
@@ -154,6 +161,7 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
   };
 
   const handleSelectHistoryItem = (item: QueryHistoryItem) => {
+    setQueryError(null);
     setQueryResponse({
       query: item.query,
       answer: item.answer,
@@ -473,6 +481,9 @@ export const DocSageDashboard: React.FC<DocSageDashboardProps> = ({
               onQuerySubmit={handleQuerySubmit}
               onSelectEvidence={handleSelectEvidence}
               activeEvidence={activeEvidence}
+              errorMessage={queryError}
+              onOpenUpload={onOpenUpload}
+              hasDocuments={documents.length > 0}
             />
           </div>
         )}

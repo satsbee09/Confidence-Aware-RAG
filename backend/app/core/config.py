@@ -57,6 +57,15 @@ class Settings(BaseSettings):
     STORAGE_DIR: Path = Field(default=Path("./data/storage"))
     MAX_UPLOAD_SIZE_MB: int = 25
 
+    @field_validator("UPLOAD_DIR", "STORAGE_DIR", mode="after")
+    @classmethod
+    def resolve_to_absolute(cls, v: Path) -> Path:
+        if not v.is_absolute():
+            base = Path(__file__).resolve().parent.parent.parent.parent
+            cleaned = str(v).lstrip(".").lstrip("/").lstrip("\\")
+            return (base / cleaned).resolve()
+        return v
+
     # ---------------------------------------------------------
     # OCR Engine Configuration
     # ---------------------------------------------------------

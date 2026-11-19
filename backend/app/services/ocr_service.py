@@ -280,9 +280,33 @@ class DigitalPDFEngine(BaseOCREngine):
         )
 
     def extract_from_pdf_page(self, page_obj, page_number: int) -> OCRPage:
-        """Extract text blocks and words directly from PyMuPDF page object."""
+        """Extract text blocks and words directly from PyMuPDF page object, falling back to embedded OCR if scanned."""
         # page.get_text("words") returns (x0, y0, x1, y1, "word", block_no, line_no, word_no)
         word_tuples = page_obj.get_text("words")
+        from_ocr = False
+
+        if not word_tuples:
+            tessdata_candidates = [
+                Path("backend/tessdata"),
+                Path("tessdata"),
+                Path(__file__).resolve().parent.parent.parent / "backend" / "tessdata",
+                Path(__file__).resolve().parent.parent.parent / "tessdata",
+            ]
+            tessdata_dir = None
+            for p in tessdata_candidates:
+                if (p / "eng.traineddata").exists():
+                    tessdata_dir = str(p.resolve())
+                    break
+
+            if tessdata_dir:
+                try:
+                    tp = page_obj.get_textpage_ocr(tessdata=tessdata_dir, language="eng", dpi=150)
+                    word_tuples = page_obj.get_text("words", textpage=tp)
+                    from_ocr = True
+                    logger.info(f"PyMuPDF OCR extracted {len(word_tuples)} words from scanned page {page_number}.")
+                except Exception as ocr_err:
+                    logger.warning(f"PyMuPDF embedded OCR attempt failed on page {page_number}: {ocr_err}")
+
         rect = page_obj.rect
         width = int(rect.width)
         height = int(rect.height)
@@ -297,9 +321,9 @@ class DigitalPDFEngine(BaseOCREngine):
                 continue
 
             # Calculate calibrated confidence:
-            # Clean digital text has high optical fidelity (0.99).
+            # Clean digital text has high optical fidelity (0.99), OCR output defaults to 0.90.
             # Detect genuine OCR corruption artifacts, replacement characters, or unmapped font glyphs.
-            conf = 0.99
+            base_conf = 0.90 if from_ocr else 0.99
             
             # 1. Unprintable control characters or Unicode replacement (\ufffd)
             has_unicode_err = "\ufffd" in text or any(ord(c) < 32 and c not in "\t\n\r" for c in text)
@@ -315,7 +339,7 @@ class DigitalPDFEngine(BaseOCREngine):
             if has_unicode_err or has_raw_noise or has_excessive_mojibake:
                 conf = 0.52  # Flagged below low-confidence threshold
             else:
-                conf = 0.99
+                conf = base_conf
 
             word_obj = OCRWord(
                 text=text,
